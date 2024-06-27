@@ -1,16 +1,17 @@
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import { User } from "../models/schemaOfUser.js";
 import ErrorHandler from "../middlewares/errorMiddleware.js";
+import { generateToken } from "../utilities/jwtTokens.js";
+
 
 export const patientRegister = catchAsyncErrors(async (req, res, next) => {
-  const { firstName, lastName, email, phone, nic, dob, gender, password } =
+  const { firstName, lastName, email, phone, dob, gender, password } =
     req.body;
   if (
     !firstName ||
     !lastName ||
     !email ||
     !phone ||
-    !nic ||
     !dob ||
     !gender ||
     !password
@@ -28,13 +29,12 @@ export const patientRegister = catchAsyncErrors(async (req, res, next) => {
     lastName,
     email,
     phone,
-    nic,
     dob,
     gender,
     password,
     role: "Patient",
   });
-  generateToken(user, "User Registered!", 200, res);
+  generateToken(user, "User registered successfully!", 200, res);
 });
 
 export const login = catchAsyncErrors(async (req, res, next) => {
@@ -192,7 +192,6 @@ export const getUserDetails = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-// Logout function for dashboard admin
 export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
   res
     .status(201)
@@ -206,7 +205,6 @@ export const logoutAdmin = catchAsyncErrors(async (req, res, next) => {
     });
 });
 
-// Logout function for frontend patient
 export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
   res
     .status(201)
