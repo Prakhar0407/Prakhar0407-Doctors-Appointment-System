@@ -1,6 +1,8 @@
 
 import { Message } from "../models/schemaOfMessage.js";
 
+import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
+
 export const sendMessage = async (req, res, next) => {
   const { firstName, lastName, email, phone, message } = req.body;
   if (!firstName || !lastName || !email || !phone || !message) {  //check filling
