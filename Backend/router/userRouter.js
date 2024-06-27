@@ -1,10 +1,10 @@
 import express from "express";
 import {
-  addNewAdmin,
+  addAdmin,
+  login,
   addNewDoctor,
   getAllDoctors,
   getUserDetails,
-  login,
   logoutAdmin,
   logoutPatient,
   patientRegister,
@@ -14,6 +14,7 @@ const router = express.Router();
 
 router.post("/patient/register", patientRegister);
 router.post("/login", login);
+router.post("/admin/addadmin",addAdmin);
 
 
 export default router;

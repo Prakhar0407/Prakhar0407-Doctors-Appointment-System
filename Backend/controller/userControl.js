@@ -62,20 +62,19 @@ export const login = catchAsyncErrors(async (req, res, next) => {
   generateToken(user, "Login Successfully!", 201, res);
 });
 
-export const addNewAdmin = catchAsyncErrors(async (req, res, next) => {
-  const { firstName, lastName, email, phone, nic, dob, gender, password } =
+export const addAdmin = catchAsyncErrors(async (req, res, next) => {
+  const { firstName, lastName, email, phone, dob, gender, password } =
     req.body;
   if (
     !firstName ||
     !lastName ||
     !email ||
     !phone ||
-    !nic ||
     !dob ||
     !gender ||
     !password
   ) {
-    return next(new ErrorHandler("Please Fill Full Form!", 400));
+    return next(new ErrorHandler("Please fill all the details!", 400));
   }
 
   const isRegistered = await User.findOne({ email });
@@ -88,7 +87,6 @@ export const addNewAdmin = catchAsyncErrors(async (req, res, next) => {
     lastName,
     email,
     phone,
-    nic,
     dob,
     gender,
     password,
