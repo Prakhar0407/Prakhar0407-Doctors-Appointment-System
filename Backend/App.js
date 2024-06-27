@@ -8,7 +8,8 @@ import fileUpload from "express-fileupload";
 
 import { databaseworking } from "./database/databaseworking.js";
 import cookieParser from "cookie-parser";
-// import messageRouter from "./router/messageRouter.js";
+
+import messageRouter from "./router/messageRouter.js";
 
 
 app.use(cookieParser());
@@ -33,7 +34,7 @@ app.use(  //accoring to documentaion
   );
 
 
-// app.use("/api/v1/message", messageRouter);
+app.use("/api/v1/message", messageRouter);
 
 
 
