@@ -1,5 +1,5 @@
 import express from "express";
-
+import userRouter from "./router/userRouter.js";
 import {config} from "dotenv";
 import cors from "cors"; //connecting frontend
 const app= express();
@@ -35,7 +35,7 @@ app.use(  //accoring to documentaion
 
 
 app.use("/api/v1/message", messageRouter);
-
+app.use("/api/v1/user", userRouter);
 
 app.use(errorMiddleware);
 export default app;
