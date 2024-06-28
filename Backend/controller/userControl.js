@@ -2,7 +2,7 @@ import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import { User } from "../models/schemaOfUser.js";
 import ErrorHandler from "../middlewares/errorMiddleware.js";
 import { generateToken } from "../utilities/jwtTokens.js";
-
+import cloudinary from "cloudinary";
 
 export const patientRegister = catchAsyncErrors(async (req, res, next) => {
   const { firstName, lastName, email, phone, dob, gender, password } =
@@ -130,7 +130,7 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
     !doctorDepartment ||
     !docAvatar
   ) {
-    return next(new ErrorHandler("Please Fill Full Form!", 400));
+    return next(new ErrorHandler("Please provide all the deatils!", 400));
   }
   const isRegistered = await User.findOne({ email });
   if (isRegistered) {
@@ -147,7 +147,7 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
       cloudinaryResponse.error || "Unknown Cloudinary error"
     );
     return next(
-      new ErrorHandler("Failed To Upload Doctor Avatar To Cloudinary", 500)
+      new ErrorHandler("Failed to upload Avatar", 500)
     );
   }
   const doctor = await User.create({
