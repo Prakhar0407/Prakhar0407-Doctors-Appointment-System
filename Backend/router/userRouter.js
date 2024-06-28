@@ -21,7 +21,6 @@ const router = express.Router();
 router.post("/patient/register", patientRegister);
 router.post("/login", login);
 router.post("/admin/addadmin",isAdminAuthenticated ,addAdmin);
-router.get("/doctors", getAllDoctors);
 
 router.get("/patient/me", isPatientAuthenticated, getUserDetails);
 router.get("/patient/logout", isPatientAuthenticated, logoutPatient)
@@ -29,5 +28,7 @@ router.get("/patient/logout", isPatientAuthenticated, logoutPatient)
 router.get("/admin/me", isAdminAuthenticated, getUserDetails);
 router.get("/admin/logout", isAdminAuthenticated, logoutAdmin);
 
+router.get("/doctors", getAllDoctors);
+router.post("/doctor/addnewdoctor", isAdminAuthenticated, addNewDoctor);
 
 export default router;

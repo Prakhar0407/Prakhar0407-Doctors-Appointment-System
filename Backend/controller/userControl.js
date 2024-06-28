@@ -100,7 +100,7 @@ export const addAdmin = catchAsyncErrors(async (req, res, next) => {
 
 export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
   if (!req.files || Object.keys(req.files).length === 0) {
-    return next(new ErrorHandler("Avatar is required!", 400));
+    return next(new ErrorHandler("Doctor Avatar is required!", 400));
   }
   const { docAvatar } = req.files;
   const allowedFormats = ["image/png", "image/jpg" , "image/jpeg", "image/webp"];
@@ -112,7 +112,6 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
     lastName,
     email,
     phone,
-    nic,
     dob,
     gender,
     password,
@@ -123,7 +122,6 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
     !lastName ||
     !email ||
     !phone ||
-    !nic ||
     !dob ||
     !gender ||
     !password ||
@@ -155,12 +153,12 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
     lastName,
     email,
     phone,
-    nic,
     dob,
     gender,
     password,
-    role: "Doctor",
-    doctorDepartment,
+    doctorDepartment, 
+    role : "Doctor",
+
     docAvatar: {
       public_id: cloudinaryResponse.public_id,
       url: cloudinaryResponse.secure_url,
@@ -174,7 +172,7 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
 });
 
 export const getAllDoctors = catchAsyncErrors(async (req, res, next) => {
-  const doctors = await User.find({ role: "Doctor" });
+  const doctors = await User.find({ role:"Doctor"});
   res.status(200).json({
     success: true,
     doctors,
