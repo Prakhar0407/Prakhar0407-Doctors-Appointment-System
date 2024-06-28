@@ -11,7 +11,7 @@ import cookieParser from "cookie-parser";
 
 import messageRouter from "./router/messageRouter.js";
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
-
+import appointmentRouter from "./router/appointmentRouter.js";
 app.use(cookieParser());
 app.use(express.json());
 
@@ -36,6 +36,7 @@ app.use(  //accoring to documentaion
 
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/appointment", appointmentRouter);
 
 app.use(errorMiddleware);
 export default app;

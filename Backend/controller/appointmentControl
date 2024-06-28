@@ -47,10 +47,7 @@ export const postAppointment = catchAsyncErrors(async (req, res, next) => {
     if (isConflict.length > 1) {
       return next(
         new ErrorHandler(
-          "Error! Please contact through Email Or Phone.",
-          400
-        )
-      );
+          "Error! Please contact through Email Or Phone.",404 ));
     }
     const doctorId = isConflict[0]._id;
     const patientId = req.user._id;
@@ -74,7 +71,10 @@ export const postAppointment = catchAsyncErrors(async (req, res, next) => {
     });
     res.status(200).json({
       success: true,
-      appointment,
       message: "Appointment Send Successfully!",
+      appointment,
+      
     });
   });
+
+  
