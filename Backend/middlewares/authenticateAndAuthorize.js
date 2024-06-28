@@ -1,6 +1,9 @@
 import jwt from "jsonwebtoken";
 import { catchAsyncErrors } from "./catchAsyncErrors.js";
 import ErrorHandler from "./errorMiddleware.js";
+import { User } from "../models/schemaOfUser.js";
+
+
 
 export const isPatientAuthenticated = catchAsyncErrors(
   async (req, res, next) => {
