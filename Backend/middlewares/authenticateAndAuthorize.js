@@ -3,6 +3,7 @@
 export const isAdminAuthenticated = catchAsyncErrors(
     async (req, res, next) => {
       const token = req.cookies.adminToken;
+      
       if (!token) {
         return next(new ErrorHandler("Admin is not authenticated!", 400)
         );
