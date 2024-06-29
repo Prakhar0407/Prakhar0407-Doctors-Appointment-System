@@ -100,11 +100,8 @@ nav .navLinks .links {
 
 
   nav .logoutBtn {
-    background: linear-gradient(135deg, black, rgb(49, 49, 49));
-  }
-  nav .logoutBtn {
     margin-top: 20px;
-
+    background: linear-gradient(135deg, black, rgb(49, 49, 49));
   }
 
   /* Nav Button */
@@ -140,6 +137,125 @@ nav .navLinks .links {
     color: #000;
   }
 
+    /* Menu Button */
+
+    @media (max-width: 1100px) {
+        nav {
+          background: aqua;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        nav .hamburger {
+          display: flex;
+        }
+        nav .navLinks {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding: 15px 7.5px;
+          z-index: 2;
+          transition: 0.3s;
+          position: fixed;
+          left: 0;
+          height: 100%;
+          width: 400px;
+          background: #000000bf;
+          top: 79px;
+          
+          
+        }
+        nav .showmenu {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding: 10px 7.5px;
+          z-index: 2;
+          transition: 0.3s;
+          position: fixed;
+          left: -100%;
+          width: 400px;
+          height: 100%;
+          background: #000000bf;
+          top: 79px;
+          
+          
+        }
+
+        @media (max-width: 800px) {
+  nav .showmenu {
+    width: 96vw;
+  }
+}
+@media (max-width: 650px) {
+  nav .showmenu {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+@media (max-width: 555px) {
+  nav {
+    background: #000;
+  }
+  nav .navLinks {
+    background: #000;
+    width: 100%;
+  }
+}
+
+        nav .navLinks .links {
+          flex-direction: column;
+          text-align: center;
+          
+        }
+        nav .navLinks .links a {
+          font-weight: 700;
+          display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: 3px solid aqua;
+        border-radius: 5px;
+        background-color: #000;
+        color: aqua; 
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav .navLinks .links a:hover{
+          
+        border: 3px solid red;
+        background-color: #fff; 
+        color: red; 
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav .logoutBtn {
+          margin-top: 20px;
+      
+        }
+      }
+
+      @media (max-width: 800px) {
+        nav .showmenu {
+          width: 96vw;
+        }
+      }
+      @media (max-width: 650px) {
+        nav .showmenu {
+          margin: 0;
+          width: 100%;
+          border-radius: 0;
+        }
+      }
+      @media (max-width: 555px) {
+        nav {
+          background: #000;
+        }
+        nav .navLinks {
+          background: #000;
+          width: 100%;
+        }
+      }
+
+  
   /* Book Appointment Button */
 
   .appointButton{
@@ -258,6 +374,26 @@ nav .navLinks .links {
     max-width: 450px;
   }
 
+  @media (max-width: 888px) {
+    .form-component {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    .form-component form div {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 667px) {
+    .form-component form input,
+    .form-component form select,
+    .form-component form textarea {
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
+
+  /* Message */
 
   .message-form {
     position: relative;
@@ -281,32 +417,9 @@ nav .navLinks .links {
       top: 10%;
     }
   }
-  @media (max-width: 888px) {
-    .form-component {
-      padding-top: 30px;
-      padding-bottom: 30px;
-    }
-    .form-component form div {
-      flex-direction: column;
-    }
-  }
 
-  @media (max-width: 667px) {
-    .form-component form input,
-    .form-component form select,
-    .form-component form textarea {
-      font-size: 20px;
-      padding: 10px;
-    }
-  }
-  @media (max-width: 1110px) {
-    .appointment-form form div:nth-child(4) {
-      flex-direction: column;
-    }
-    .appointment-form form div:nth-child(5) {
-      flex-direction: column;
-    }
-  }
+
+
 
   /* Department */
 
@@ -416,4 +529,13 @@ nav .navLinks .links {
     width: 100%;
     background-size: cover;
   
+  }
+
+  @media (max-width: 1110px) {
+    .appointment-form form div:nth-child(4) {
+      flex-direction: column;
+    }
+    .appointment-form form div:nth-child(5) {
+      flex-direction: column;
+    }
   }
