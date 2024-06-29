@@ -1,25 +1,52 @@
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
+body{
+  background-color: #000;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.hero {
+  display: flex;
+  gap: 50px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  position: relative;
 }
-.logo.preact:hover {
-  filter: drop-shadow(0 0 2em #673ab8aa);
+.hero .banner {
+  flex: 1;
 }
-
-.card {
-  padding: 2em;
+.hero .banner h1,
+.hero .banner p {
+  max-width: 650px;
 }
-
-.read-the-docs {
-  color: #888;
+.hero .banner h1 {
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  font-size: 40px;
+}
+.hero .banner p {
+  color: red;
+  letter-spacing: 2px;
+}
+.hero .banner span {
+  position: absolute;
+  right: -300px;
+  top: -200px;
+  z-index: -1;
+}
+.hero .banner:first-child {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.hero .banner:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
 }
