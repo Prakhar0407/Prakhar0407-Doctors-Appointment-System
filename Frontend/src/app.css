@@ -253,3 +253,13 @@ nav .navLinks .links {
     }
   }
 
+  /* Department */
+
+  .departments {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .departments h2 {
+    color: green;
+    margin-bottom: 30px;
+  }
