@@ -143,12 +143,23 @@ nav .navLinks .links {
   }
 
   /* Login */
-  
+
   .login-form {
     margin: 100px auto 20px auto;
     max-width: 800px;
     text-align: center;
   }
   .login-form h2 {
+    color: green;
+  }
+
+  /* Register */
+
+  .register-form {
+    max-width: 1200px;
+    margin: 100px auto 20px auto;
+  }
+
+  .register-form h2 {
     color: green;
   }
