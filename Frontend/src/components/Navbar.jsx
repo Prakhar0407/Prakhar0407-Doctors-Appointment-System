@@ -6,6 +6,9 @@ import { toast } from "react-toastify";
 import { Context } from "../main";
 
 const Navbar = () => {
+  const [show, setShow] = useState(false);
+  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+
   const handleLogout = async () => {
     await axios
       .get("http://localhost:4000/api/v1/user/patient/logout", {
@@ -20,6 +23,11 @@ const Navbar = () => {
       });
   };
 
+  const navigateTo = useNavigate();
+
+  const goToLogin = () => {
+    navigateTo("/login");
+  };
 
   return (
     <>
@@ -43,7 +51,19 @@ const Navbar = () => {
             </Link>
           </div>   
                </div>
-  
+          {isAuthenticated ? (
+            <button className="logoutBtn btn" onClick={handleLogout}>
+              LOGOUT
+            </button>
+          ) : (
+            <button className="loginBtn btn" onClick={goToLogin}>
+              LOGIN
+            </button>
+          )}
+
+        <div className="hamburger" onClick={() => setShow(!show)}>
+          <GiHamburgerMenu />
+        </div>
       </nav>
     </>
   );

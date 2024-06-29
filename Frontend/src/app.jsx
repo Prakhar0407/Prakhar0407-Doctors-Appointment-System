@@ -1,16 +1,18 @@
-import React from 'react'
-import "./app.css"
+import React, { useContext, useEffect } from "react";
+import "./app.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Appointment from "./pages/Appointment";
-import About from "./pages/About";
+import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import { Context } from "./main";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const app = () => {
+import axios from "axios";
+import { Context } from "./main";
+import Login from "./pages/Login";
+const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(Context);
 
@@ -40,15 +42,15 @@ const app = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/appointment" element={<Appointment />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} /> 
-          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
         <ToastContainer position="top-center" />
       </Router>
     </>
   );
-}
+};
 
-export default app
+export default App;

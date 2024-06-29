@@ -1,22 +1,9 @@
-import React, { useContext } from "react";
-import Hero from "./Landing";
-import MessageForm from "../components/MessageForm";
-import Departments from "../components/Departments";
+import axios from "axios";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 
-const Home = () => {
-    return (
-      <>
-        <Hero
-          title={
-            "Welcome! ! | We will help you with your Medical issue."
-          }
-          imageUrl={"/hero.png"}
-        />
-        <Departments />
-        <MessageForm />
-      </>
-    );
-  };
-  
-  export default Home;
-  
+const MessageForm = () => {
+
+};
+
+export default MessageForm;
