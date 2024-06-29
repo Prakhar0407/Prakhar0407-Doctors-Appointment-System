@@ -1,10 +1,18 @@
-import axios from "axios";
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { toast } from "react-toastify";
+import React from "react";
+import MainBody from "../components/MainBody";
+import AppointmentForm from "../components/AppointmentForm";
 
-const AppointmentForm = () => {
+const Appointment = () => {
+  return (
+    <><div class = "frontHead">
+      <MainBody
 
+
+  
+      /> </div>
+      <AppointmentForm/>
+    </>
+  );
 };
 
-export default AppointmentForm;
+export default Appointment;

@@ -9,7 +9,7 @@ const Home = () => {
       <MainBody
         title={
           <div class="titleHead">
-          "Welcome! 
+          "Welcome! Your Trusted Healthcare Provider"
           </div>
         }
         

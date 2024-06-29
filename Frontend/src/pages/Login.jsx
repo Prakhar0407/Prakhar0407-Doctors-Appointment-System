@@ -5,7 +5,6 @@ import { Context } from "../main";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 
 const Login = () => {
-  
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
   const [email, setEmail] = useState("");
@@ -42,6 +41,7 @@ const Login = () => {
   if (isAuthenticated) {
     return <Navigate to={"/"} />;
   }
+
   return (
     <>
       <div className="container form-component login-form">

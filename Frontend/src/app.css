@@ -82,6 +82,10 @@ nav .navLinks .links {
     border-color: red;
     border-radius: 15px;
   }
+
+  /* Login */
+
+
   nav .loginBtn {
     background-color: red;
     color: black;
@@ -91,9 +95,21 @@ nav .navLinks .links {
     background-color: black;
     color: red;
   }
+
+  /* Logout */
+
+
   nav .logoutBtn {
     background: linear-gradient(135deg, black, rgb(49, 49, 49));
   }
+  nav .logoutBtn {
+    margin-top: 20px;
+
+  }
+
+  /* Nav Button */
+
+
   nav .btn {
     padding: 8px 20px;
    background: transparent;
@@ -392,4 +408,12 @@ nav .navLinks .links {
     overflow-y: hidden;
   }
 
+/* Appointment */
+
+.frontHead {
+    background: url('/departments/bgcover.jpg');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
   
+  }
