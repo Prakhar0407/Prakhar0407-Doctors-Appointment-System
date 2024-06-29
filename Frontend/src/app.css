@@ -80,7 +80,49 @@ nav .navLinks .links {
     border-color: red;
     border-radius: 15px;
   }
+  nav .loginBtn {
+    background-color: red;
+    color: black;
+  
+  }
+  nav .loginBtn:hover {
+    background-color: black;
+    color: red;
+  }
+  nav .logoutBtn {
+    background: linear-gradient(135deg, black, rgb(49, 49, 49));
+  }
+  nav .btn {
+    padding: 8px 20px;
+   background: transparent;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 2;
+    color: red;
+  }
+  nav .btn:hover{
+  
+    color: aqua;
+  
+  }
+  nav svg {
+    font-size: 1.75rem;
+  }
+  @media (max-width: 1520px) {
+    nav {
+      min-width: 100%;
+      padding: 25px 20px 40px 20px;
+  
+    }
+  }
+  nav .hamburger {
+    display: none;
+    color: #000;
+  }
 
+  
   .appointButton{
     color:red;
     background-color: #fff;
