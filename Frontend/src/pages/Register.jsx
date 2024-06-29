@@ -6,6 +6,51 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Register = () => {
 
+    const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [dob, setDob] = useState("");
+    const [gender, setGender] = useState("");
+    const [password, setPassword] = useState("");
+  
+    const navigateTo = useNavigate();
+  
+    const handleRegistration = async (e) => {
+      e.preventDefault();
+      try {
+        await axios
+          .post(
+            "http://localhost:4000/api/v1/user/patient/register",
+            { firstName, lastName, email, phone, dob, gender, password },
+            {
+              withCredentials: true,
+              headers: { "Content-Type": "application/json" },
+            }
+          )
+          .then((res) => {
+            toast.success(res.data.message);
+            setIsAuthenticated(true);
+            navigateTo("/");
+            setFirstName("");
+            setLastName("");
+            setEmail("");
+            setPhone("");
+            setDob("");
+            setGender("");
+            setPassword("");
+          });
+      } catch (error) {
+        toast.error(error.response.data.message);
+      }
+    };
+  
+    if (isAuthenticated) {
+      return <Navigate to={"/"} />;
+    }
+
     return (
         <>
           <div className="container form-component register-form">
