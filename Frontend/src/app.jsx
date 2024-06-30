@@ -3,6 +3,7 @@ import "./app.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Appointment from "./pages/Appointment";
+import Contact from "./pages/Contact.jsx";
 import About from "./pages/About";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
@@ -42,6 +43,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/appointment" element={<Appointment />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />

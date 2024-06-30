@@ -93,7 +93,7 @@ nav .navLinks .links {
   }
   nav .loginBtn:hover {
     background-color: black;
-    color: red;
+    color: aqua;
   }
 
   /* Logout */
@@ -119,7 +119,8 @@ nav .navLinks .links {
   }
   nav .btn:hover{
   
-    color: aqua;
+    color: Red;
+    background-color: black;
   
   }
   nav svg {
@@ -539,3 +540,16 @@ nav .navLinks .links {
       flex-direction: column;
     }
   }
+
+  .textForDetails{
+    color: aqua;
+    font-style: italic;
+    margin-top: 11px;
+  }
+
+  .getInTouch{
+    margin-top: 130px;
+  }
+.details{
+  color:red;
+}

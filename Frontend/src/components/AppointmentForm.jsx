@@ -11,7 +11,7 @@ const AppointmentForm = () => {
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
-  const [department, setDepartment] = useState("Pediatrics");
+  const [department, setDepartment] = useState("Radiology");
   const [doctorFirstName, setDoctorFirstName] = useState("");
   const [doctorLastName, setDoctorLastName] = useState("");
   const [address, setAddress] = useState("");
@@ -91,13 +91,16 @@ const AppointmentForm = () => {
         <h2>Appointment</h2>
         <form onSubmit={handleAppointment}>
           <div>
+            <span class="textForDetails">Name -</span>
             <input
               type="text"
               placeholder="First Name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
+             <span class="textForDetails">Surname -</span>
             <input
+            
               type="text"
               placeholder="Last Name"
               value={lastName}
@@ -105,12 +108,14 @@ const AppointmentForm = () => {
             />
           </div>
           <div>
+          <span class="textForDetails">E-Mail -</span>
             <input
               type="text"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+             <span class="textForDetails">Phone -</span>
             <input
               type="number"
               placeholder="Mobile Number"
@@ -119,6 +124,7 @@ const AppointmentForm = () => {
             />
           </div>
           <div>
+          <span class="textForDetails">D.O.B.</span>
             <input
               type="date"
               placeholder="Date of Birth"
@@ -127,11 +133,13 @@ const AppointmentForm = () => {
             />
           </div>
           <div>
+          <span class="textForDetails">Phone</span>
             <select value={gender} onChange={(e) => setGender(e.target.value)}>
               <option value="">Select Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
+            <span class="textForDetails">Appointment Date -</span>
             <input
               type="date"
               placeholder="Appointment Date"
@@ -140,6 +148,7 @@ const AppointmentForm = () => {
             />
           </div>
           <div>
+          <span class="textForDetails">Department -</span>
             <select
               value={department}
               onChange={(e) => {
@@ -156,6 +165,7 @@ const AppointmentForm = () => {
                 );
               })}
             </select>
+            <span class="textForDetails">Choose Doctor -</span>
             <select
               value={`${doctorFirstName} ${doctorLastName}`}
               onChange={(e) => {
@@ -178,6 +188,7 @@ const AppointmentForm = () => {
                 ))}
             </select>
           </div>
+          <span class="textForDetails">Address -</span>
           <textarea
             rows="10"
             value={address}

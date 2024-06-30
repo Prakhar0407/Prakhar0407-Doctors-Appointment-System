@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import MainBody from "../components/MainBody";
-import MessageForm from "../components/MessageForm";
 import Departments from "../components/Departments";
+
 
 const Home = () => {
   return (
@@ -24,7 +24,7 @@ const Home = () => {
  
       />
       <Departments />
-      <MessageForm />
+
     </>
   );
 };

@@ -5,28 +5,37 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
 
-    return (
-        <>
-          <footer className={"container"}>
-            <hr />
-            <div className="content">
-              <div>
-                <img src="/docAtpat.png" alt="logo" className="logo-img"/>
-              </div>
-              <div>
-                <ul>
-                  <Link to={"/"}>Home</Link>
-                  <Link to={"/appointment"}>Appointment</Link>
-                  <Link to={"/contact"}>Contact</Link>
-                  <Link to={"/about"}>About</Link>
-                </ul>
-              </div>
-             
-              
+  return (
+    <>
+    <div class="details">
+      <footer className={"container"}>
+        <hr />
+        <div className="content">
+          <div>
+            <img src="/docAtpat.png" alt="logo" className="logo-img"/>
+          </div>
+  
+  
+          <div>
+            <h4>Contact</h4>
+            <div>
+              <FaPhone />
+              <span>7999103084</span>
             </div>
-          </footer>
-        </>
-      );
+            <div>
+              <MdEmail />
+              <span>prakharsankle@gmail.com</span>
+            </div>
+            <div>
+              <FaLocationArrow />
+              <span>Indore, Madhya Prad</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </div>
+    </>
+  );
 };
 
 export default Footer;
