@@ -40,6 +40,10 @@ const Departments = () => {
       name: "ENT",
       imageUrl: "/departments/ent.jpg",
     },
+    {
+      name: "Surgeon",
+      imageUrl: "/departments/ent.jpg",
+    },
   ];
 
   const responsive = {
