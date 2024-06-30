@@ -553,3 +553,44 @@ nav .navLinks .links {
 .details{
   color:red;
 }
+
+/* News */
+
+.container_news {
+  padding: 16px;
+}
+
+.grid_news {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card_news {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  color: white;
+}
+.card_news:hover{
+  color: aqua;
+  background-color: green;
+}
+
+.card_news a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.image_news {
+  width: 100%;
+  height: auto;
+}
+
+.content_news {
+  padding: 16px;
+}
