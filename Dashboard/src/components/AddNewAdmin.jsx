@@ -11,7 +11,6 @@ const AddNewAdmin = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nic, setNic] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
@@ -23,8 +22,8 @@ const AddNewAdmin = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/admin/addnew",
-          { firstName, lastName, email, phone, nic, dob, gender, password },
+          "http://localhost:4000/api/v1/user/admin/addadmin",
+          { firstName, lastName, email, phone, dob, gender, password },
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -38,7 +37,6 @@ const AddNewAdmin = () => {
           setLastName("");
           setEmail("");
           setPhone("");
-          setNic("");
           setDob("");
           setGender("");
           setPassword("");
@@ -55,17 +53,19 @@ const AddNewAdmin = () => {
   return (
     <section className="page">
       <section className="container form-component add-admin-form">
-      <img src="/logo.png" alt="logo" className="logo"/>
+      <img src="/docAtPat.png" alt="logo" className="logo"/>
         <h1 className="form-title">ADD NEW ADMIN</h1>
         <form onSubmit={handleAddNewAdmin}>
-          <div>
-            <input
+          <div >
+  
+            <input className="adminText"
               type="text"
               placeholder="First Name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-            />
-            <input
+          />
+      
+            <input className="adminText"
               type="text"
               placeholder="Last Name"
               value={lastName}
@@ -73,13 +73,14 @@ const AddNewAdmin = () => {
             />
           </div>
           <div>
-            <input
+            <input className="adminText"
               type="text"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <input
+  
+            <input className="adminText"
               type="number"
               placeholder="Mobile Number"
               value={phone}
@@ -87,20 +88,22 @@ const AddNewAdmin = () => {
             />
           </div>
           <div>
-            <input
+
+
+            <input className="adminText"
               type={"date"}
               placeholder="Date of Birth"
               value={dob}
               onChange={(e) => setDob(e.target.value)}
             />
-          </div>
-          <div>
-            <select value={gender} onChange={(e) => setGender(e.target.value)}>
+
+            <select  className="adminText" value={gender} onChange={(e) => setGender(e.target.value)}>
               <option value="">Select Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
-            <input
+
+            <input className="adminText"
               type="password"
               placeholder="Password"
               value={password}
@@ -108,7 +111,7 @@ const AddNewAdmin = () => {
             />
           </div>
           <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">ADD NEW ADMIN</button>
+            <button className="adminText" type="submit">Submit</button>
           </div>
         </form>
       </section>

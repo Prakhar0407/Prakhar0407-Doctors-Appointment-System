@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -9,7 +8,7 @@ const News = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          `https://newsapi.org/v2/everything?q=doctor&apiKey=1d3a0eefa97b499d8fbc4ee93eeb40b7`
+          `https://newsapi.org/v2/everything?q=doctor&apiKey=e5a7579d1a6d49ecb88c9fea27fba462`
         );
         setArticles(response.data.articles);
       } catch (error) {

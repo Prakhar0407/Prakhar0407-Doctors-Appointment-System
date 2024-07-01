@@ -5,13 +5,10 @@ import { Context } from "../main";
 import axios from "axios";
 
 const Login = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-
+  
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
-
 
   const navigateTo = useNavigate();
 
@@ -46,23 +43,22 @@ const Login = () => {
   return (
     <>
       <section className="container form-component">
-        <img src="/logo.png" alt="logo" className="logo" />
-        <h1 className="formTitle">WELCOME!</h1>
-        <p>You must be Admin to access this!</p>
+        <img src="/docAtPat.png" alt="logo" className="logo" />
+        <p>For Admins Only!</p>
         <form onSubmit={handleLogin}>
-          <input
+          <input className="loginDetails"
             type="text"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <input
+          <input className="loginDetails"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
+         
           <div style={{ justifyContent: "center", alignItems: "center" }}>
             <button type="submit">Login</button>
           </div>
