@@ -5,10 +5,14 @@ import "./app.css";
 
 const app = () => {
   return (
-    <div>
-      
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <ToastContainer position="top-center" />
+    </Router>
+  );
 }
 
 export default app
