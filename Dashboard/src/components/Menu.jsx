@@ -4,7 +4,7 @@ import { Context } from "../main";
 import { useNavigate } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { MdOutlineHome } from "react-icons/md";
-
+import { CgUserAdd } from "react-icons/cg";
 
 
 const Menu = () => {
@@ -19,6 +19,10 @@ const Menu = () => {
       navigateTo("/");
       setShow(!show);
     };
+    const gotoAddNewAdmin = () => {
+        navigateTo("/admin/addnew");
+        setShow(!show);
+      };
 
   
     return (
@@ -29,7 +33,7 @@ const Menu = () => {
         >
           <div className="links">
             <MdOutlineHome onClick={gotoHomePage} />
-
+            <CgUserAdd onClick={gotoAddNewAdmin} />
           </div>
         </nav>
         <div

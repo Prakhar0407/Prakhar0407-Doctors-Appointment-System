@@ -3,6 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./app.css";
 import Login from "./components/Login";
 import Menu from "./components/Menu";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Context } from "./main";
+import axios from "axios";
+import AdminDashboard from "./components/AdminDashboard";
+import AddAdmin from "./components/AddAdmin";
+
+
 const app = () => {
   const { isAuthenticated, setIsAuthenticated, admin, setAdmin } =
   useContext(Context);
@@ -30,8 +38,10 @@ useEffect(() => {
     <Router>   
       <Menu />
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<AdminDashboard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admin/addnew" element={<AddAdmin />} />
+
       </Routes>
       <ToastContainer position="top-center" />
     </Router>
