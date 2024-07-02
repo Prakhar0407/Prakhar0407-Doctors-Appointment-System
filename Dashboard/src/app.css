@@ -124,9 +124,11 @@ body {
 .form-component .wrapper {
   display: flex;
   gap: 50px;
+  
 }
 .form-component .wrapper .banner {
   flex: 1;
+
 }
 .form-component .wrapper .banner:last-child {
   display: flex;
@@ -173,10 +175,14 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+
 .dashboard .banner:first-child {
   height: 35vh;
   display: flex;
   gap: 20px;
+}
+.dashboard .banner:first-child  .h5{
+color:green;
 }
 .dashboard .banner:first-child .firstBox {
   flex: 2;
@@ -666,4 +672,18 @@ background-color: aqua;
     }
   .Loginbtn{
     background-color: red;
+  }
+  .tbody{
+    color:white;
+  }
+  .AppointmentWritten{
+    color:white;
+  }
+  .TitleTextAppointment{
+    background: green;
+    text-align: center;
+
+  }
+  .AppointmentHeading{
+  background-color: yellow;
   }

@@ -10,6 +10,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Context } from "../main";
 import { useNavigate } from "react-router-dom";
+import Dashboard from "./Dashboard"; 
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
@@ -33,7 +34,7 @@ const Sidebar = () => {
   const navigateTo = useNavigate();
 
   const gotoHomePage = () => {
-    navigateTo("/");
+    navigateTo("Dashboard");
     setShow(!show);
   };
   const gotoDoctorsPage = () => {
@@ -74,7 +75,9 @@ const Sidebar = () => {
       >
         <GiHamburgerMenu className="hamburger" onClick={() => setShow(!show)} />
       </div>
+
     </>
+
   );
 };
 

@@ -9,7 +9,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword] = useState("");
+
 
   const navigateTo = useNavigate();
 
@@ -31,8 +31,8 @@ const Login = () => {
           navigateTo("/");
           setEmail("");
           setPassword("");
-          // setConfirmPassword("");
-        });
+    
+         });
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -64,12 +64,7 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {/* <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          /> */}
+
           <div
             style={{
               gap: "10px",

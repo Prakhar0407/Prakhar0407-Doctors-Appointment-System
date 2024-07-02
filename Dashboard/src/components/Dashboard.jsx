@@ -8,6 +8,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
+  const [totalCount, setTotalAppointmentCount] = useState(0);
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -17,12 +18,16 @@ const Dashboard = () => {
           { withCredentials: true }
         );
         setAppointments(data.appointments);
+        const count = data.appointments.length;
+        setTotalAppointmentCount(count);
+
       } catch (error) {
         setAppointments([]);
       }
     };
     fetchAppointments();
   }, []);
+
 
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
@@ -46,6 +51,7 @@ const Dashboard = () => {
 
   const { isAuthenticated, admin } = useContext(Context);
   if (!isAuthenticated) {
+    console.log("Not Authenticated, Redirecting to Login..")
     return <Navigate to={"/login"} />;
   }
 
@@ -72,18 +78,15 @@ const Dashboard = () => {
           </div>
           <div className="secondBox">
             <p>Total Appointments</p>
-            <h3>1500</h3>
+            <h3>{totalCount}</h3>
           </div>
-          <div className="thirdBox">
-            <p>Registered Doctors</p>
-            <h3>10</h3>
-          </div>
+       
         </div>
         <div className="banner">
-          <h5>Appointments</h5>
+          <h5 className="TitleTextAppointment">Appointments</h5>
           <table>
             <thead>
-              <tr>
+              <tr className="AppointmentHeading">
                 <th>Patient</th>
                 <th>Date</th>
                 <th>Doctor</th>
@@ -95,9 +98,9 @@ const Dashboard = () => {
             <tbody>
               {appointments && appointments.length > 0
                 ? appointments.map((appointment) => (
-                    <tr key={appointment._id}>
+                    <tr className="AppointmentWritten" key={appointment._id}>
                       <td>{`${appointment.firstName} ${appointment.lastName}`}</td>
-                      <td>{appointment.appointment_date.substring(0, 16)}</td>
+                      <td>{appointment.appointmentDate.substring(0, 16)}</td>
                       <td>{`${appointment.doctor.firstName} ${appointment.doctor.lastName}`}</td>
                       <td>{appointment.department}</td>
                       <td>
