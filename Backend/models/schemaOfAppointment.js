@@ -73,6 +73,11 @@ const schemaOfAppointment = new mongoose.Schema({
         enum: ["Pending", "Accepted", "Rejected"],
         default: "Pending",
       },
+      tempo: {
+        type: String,
+        enum: ["one", "two", "three","four","five"],
+        default: "-",
+      },
       
   });
 

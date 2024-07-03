@@ -5,13 +5,12 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { GoCheckCircleFill } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
-import Rating from 'react-rating-stars-component';
 
 const AppointmentList = () => {
   const [appointments, setAppointments] = useState([]);
   const [totalCount, setTotalAppointmentCount] = useState(0);
   const { isAuthenticated, admin, user } = useContext(Context);
-  const userEmail = user.email; 
+  const userEmail = user.email;
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -20,7 +19,9 @@ const AppointmentList = () => {
           "http://localhost:4000/api/v1/appointment/getall",
           { withCredentials: true }
         );
-        const filteredAppointments = data.appointments.filter(appointment => appointment.email === userEmail);
+        const filteredAppointments = data.appointments.filter(
+          (appointment) => appointment.email === userEmail
+        );
         setAppointments(filteredAppointments);
         const count = filteredAppointments.length;
         setTotalAppointmentCount(count);
@@ -32,36 +33,33 @@ const AppointmentList = () => {
     fetchAppointments();
   }, [userEmail]);
 
-  const handleUpdateRating = async (appointmentId, newRating) => {
+  if (!isAuthenticated) {
+    console.log("Not Authenticated, Redirecting to Login..");
+    return <Navigate to={"/login"} />;
+  }
+
+  const handleUpdateTempo = async (appointmentId, tempo) => {
     try {
       const { data } = await axios.put(
         `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
-        { rating: newRating },
+        { tempo },
         { withCredentials: true }
       );
       setAppointments((prevAppointments) =>
         prevAppointments.map((appointment) =>
-          appointment._id === appointmentId
-            ? { ...appointment, rating: newRating }
-            : appointment
+          appointment._id === appointmentId ? { ...appointment, tempo } : appointment
         )
       );
-      toast.success('Rating updated successfully!');
+      toast.success(data.message);
     } catch (error) {
-      toast.error('Failed to update rating. Please try again.');
+      toast.error(error.response.data.message);
     }
   };
-
-  if (!isAuthenticated) {
-    console.log("Not Authenticated, Redirecting to Login..")
-    return <Navigate to={"/login"} />;
-  }
 
   return (
     <>
       <section className="dashboard page">
-        <div className="banner">
-        </div>
+        <div className="banner"></div>
         <div className="banner">
           <h5 className="TitleTextAppointment">My Appointments</h5>
           <div className="appcnt">
@@ -75,8 +73,8 @@ const AppointmentList = () => {
                 <th>Doctor</th>
                 <th>Department</th>
                 <th>Status</th>
-                <th>Visited</th>
                 <th>Rate</th>
+                <th>Visited</th>
               </tr>
             </thead>
             <tbody>
@@ -97,23 +95,49 @@ const AppointmentList = () => {
                         )}
                       </td>
                       <td>
+                        {appointment.status === "Accepted" ? (
+                          <select
+                            className={
+                              appointment.tempo === "one"
+                                ? "value-one"
+                                : appointment.tempo === "two"
+                                ? "value-two"
+                                : appointment.tempo === "three"
+                                ? "value-three"
+                                : appointment.tempo === "four"
+                                ? "value-four"
+                                : "value-five"
+                            }
+                            value={appointment.tempo}
+                            onChange={(e) =>
+                              handleUpdateTempo(appointment._id, e.target.value)
+                            }
+                          >
+                            <option value="one" className="value-one">
+                              1
+                            </option>
+                            <option value="two" className="value-two">
+                              2
+                            </option>
+                            <option value="three" className="value-three">
+                              3
+                            </option>
+                            <option value="four" className="value-four">
+                              4
+                            </option>
+                            <option value="five" className="value-five">
+                              5
+                            </option>
+                          </select>
+                        ) : (
+                          <span>-</span>
+                        )}
+                      </td>
+                      <td>
                         {appointment.hasVisited === true ? (
                           <GoCheckCircleFill className="green" />
                         ) : (
                           <AiFillCloseCircle className="red" />
-                        )}
-                      </td>
-                      <td>
-                        {appointment.status === 'Accepted' ? (
-                          <Rating
-                            count={5}
-                            size={24}
-                            activeColor="#ffd700"
-                            value={appointment.rating || 0}
-                            onChange={(newRating) => handleUpdateRating(appointment._id, newRating)}
-                          />
-                        ) : (
-                          <span>-</span>
                         )}
                       </td>
                     </tr>
