@@ -5,10 +5,12 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { GoCheckCircleFill } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Rating from 'react-rating-stars-component';
 
 const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
   const [totalCount, setTotalAppointmentCount] = useState(0);
+  const { isAuthenticated, admin } = useContext(Context);
 
   useEffect(() => {
     const fetchAppointments = async () => {
@@ -20,14 +22,13 @@ const Dashboard = () => {
         setAppointments(data.appointments);
         const count = data.appointments.length;
         setTotalAppointmentCount(count);
-
       } catch (error) {
         setAppointments([]);
+        toast.error("Failed to fetch appointments.");
       }
     };
     fetchAppointments();
   }, []);
-
 
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
@@ -49,7 +50,16 @@ const Dashboard = () => {
     }
   };
 
-  const { isAuthenticated, admin } = useContext(Context);
+  const updateRatingFromList = (updatedAppointment) => {
+    setAppointments((prevAppointments) =>
+      prevAppointments.map((appointment) =>
+        appointment._id === updatedAppointment._id
+          ? updatedAppointment
+          : appointment
+      )
+    );
+  };
+
   if (!isAuthenticated) {
     console.log("Not Authenticated, Redirecting to Login..")
     return <Navigate to={"/login"} />;
@@ -65,12 +75,11 @@ const Dashboard = () => {
               <div>
                 <p>Welcome! </p>
                 <p>
-                  {admin &&
-                    `${admin.firstName} ${admin.lastName}`}{" "}
+                  {admin && `${admin.firstName} ${admin.lastName}`}{" "}
                 </p>
               </div>
               <p>
-                Let's see What are the new appointments. You can add Doctors and can update visiti settings here. 
+                Let's see what the new appointments are. You can add Doctors and update visiting settings here.
               </p>
             </div>
           </div>
@@ -78,7 +87,6 @@ const Dashboard = () => {
             <p>Total Appointments</p>
             <h3>{totalCount}</h3>
           </div>
-       
         </div>
         <div className="banner">
           <h5 className="TitleTextAppointment">Appointments</h5>
@@ -91,6 +99,7 @@ const Dashboard = () => {
                 <th>Department</th>
                 <th>Status</th>
                 <th>Visited</th>
+                <th>Rate</th>
               </tr>
             </thead>
             <tbody>
@@ -126,14 +135,27 @@ const Dashboard = () => {
                           </option>
                         </select>
                       </td>
-                      <td>{appointment.hasVisited === true ? <GoCheckCircleFill className="green"/> : <AiFillCloseCircle className="red"/>}</td>
+                      <td>
+                        {appointment.hasVisited === true ? (
+                          <GoCheckCircleFill className="green" />
+                        ) : (
+                          <AiFillCloseCircle className="red" />
+                        )}
+                      </td>
+                      <td>
+                        <Rating
+                          count={5}
+                          size={24}
+                          activeColor="#ffd700"
+                          value={appointment.rating || 0}
+                          edit={false} // Make the rating unchangeable
+                        />
+                      </td>
                     </tr>
                   ))
                 : "No Appointments Found!"}
             </tbody>
           </table>
-
-          {}
         </div>
       </section>
     </>

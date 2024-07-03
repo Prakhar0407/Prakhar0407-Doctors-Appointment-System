@@ -15,6 +15,7 @@ import { Context } from "./main";
 import Login from "./pages/Login";
 import News from "./pages/News";
 import AppointmentList from "./pages/AppointmentList.jsx";
+import AddReview from "./pages/AddReview.jsx";
 
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/news" element={<News />} />
           <Route path="/appointments" element={<AppointmentList />} />
+          <Route path="/review/:id" element={<AddReview />} />
 
         
        
