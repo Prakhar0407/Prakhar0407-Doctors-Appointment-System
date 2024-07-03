@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { GoCheckCircleFill } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Rating from 'react-rating-stars-component';
 
 const AppointmentList = () => {
   const [appointments, setAppointments] = useState([]);
@@ -38,16 +39,16 @@ const AppointmentList = () => {
     return <Navigate to={"/login"} />;
   }
 
-  const handleUpdateTempo = async (appointmentId, tempo) => {
+  const handleUpdaterate = async (appointmentId, rate) => {
     try {
       const { data } = await axios.put(
         `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
-        { tempo },
+        { rate },
         { withCredentials: true }
       );
       setAppointments((prevAppointments) =>
         prevAppointments.map((appointment) =>
-          appointment._id === appointmentId ? { ...appointment, tempo } : appointment
+          appointment._id === appointmentId ? { ...appointment, rate } : appointment
         )
       );
       toast.success(data.message);
@@ -96,39 +97,13 @@ const AppointmentList = () => {
                       </td>
                       <td>
                         {appointment.status === "Accepted" ? (
-                          <select
-                            className={
-                              appointment.tempo === "one"
-                                ? "value-one"
-                                : appointment.tempo === "two"
-                                ? "value-two"
-                                : appointment.tempo === "three"
-                                ? "value-three"
-                                : appointment.tempo === "four"
-                                ? "value-four"
-                                : "value-five"
-                            }
-                            value={appointment.tempo}
-                            onChange={(e) =>
-                              handleUpdateTempo(appointment._id, e.target.value)
-                            }
-                          >
-                            <option value="one" className="value-one">
-                              1
-                            </option>
-                            <option value="two" className="value-two">
-                              2
-                            </option>
-                            <option value="three" className="value-three">
-                              3
-                            </option>
-                            <option value="four" className="value-four">
-                              4
-                            </option>
-                            <option value="five" className="value-five">
-                              5
-                            </option>
-                          </select>
+                          <Rating
+                            count={5}
+                            value={parseInt(appointment.rate, 10)}
+                            onChange={(newRating) => handleUpdaterate(appointment._id, newRating.toString())}
+                            size={24}
+                            activeColor="#ffd700"
+                          />
                         ) : (
                           <span>-</span>
                         )}

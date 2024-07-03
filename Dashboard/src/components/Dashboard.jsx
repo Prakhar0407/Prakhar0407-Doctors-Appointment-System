@@ -5,6 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { GoCheckCircleFill } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Rating from 'react-rating-stars-component';
 
 const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
@@ -20,14 +21,12 @@ const Dashboard = () => {
         setAppointments(data.appointments);
         const count = data.appointments.length;
         setTotalAppointmentCount(count);
-
       } catch (error) {
         setAppointments([]);
       }
     };
     fetchAppointments();
   }, []);
-
 
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
@@ -51,7 +50,7 @@ const Dashboard = () => {
 
   const { isAuthenticated, admin } = useContext(Context);
   if (!isAuthenticated) {
-    console.log("Not Authenticated, Redirecting to Login..")
+    console.log("Not Authenticated, Redirecting to Login..");
     return <Navigate to={"/login"} />;
   }
 
@@ -70,7 +69,7 @@ const Dashboard = () => {
                 </p>
               </div>
               <p>
-                Let's see What are the new appointments. You can add Doctors and can update visitig settings here. 
+                Let's see What are the new appointments. You can add Doctors and can update visiting settings here. 
               </p>
             </div>
           </div>
@@ -78,7 +77,6 @@ const Dashboard = () => {
             <p>Total Appointments</p>
             <h3>{totalCount}</h3>
           </div>
-       
         </div>
         <div className="banner">
           <h5 className="TitleTextAppointment">Appointments</h5>
@@ -127,32 +125,21 @@ const Dashboard = () => {
                           </option>
                         </select>
                       </td>
-
-
                       <td>
-                        {appointment.tempo === "one" ? (
-                          <span className="value-one">1</span>
-                        ) : appointment.tempo === "two" ? (
-                          <span className="value-two">2</span>
-                        ) : appointment.tempo === "three" ? (
-                          <span className="value-three">3</span>
-                        ) : appointment.tempo === "four" ? (
-                          <span className="value-four">4</span>
-                        ) : (
-                          <span className="value-five">5</span>
-                        )}
+                        <Rating
+                          count={5}
+                          value={parseInt(appointment.rate, 10)}
+                          size={24}
+                          activeColor="#ffd700"
+                          edit={false} 
+                        />
                       </td>
-
-
-                      
                       <td>{appointment.hasVisited === true ? <GoCheckCircleFill className="green"/> : <AiFillCloseCircle className="red"/>}</td>
                     </tr>
                   ))
                 : "No Appointments Found!"}
             </tbody>
           </table>
-
-          {}
         </div>
       </section>
     </>
