@@ -29,6 +29,7 @@ router.get("/admin/me", isAdminAuthenticated, getUserDetails);
 router.get("/admin/logout", isAdminAuthenticated, logoutAdmin);
 
 router.get("/doctors", getAllDoctors);
-router.post("/doctor/addnewdoctor", isAdminAuthenticated, addNewDoctor);
+router.post("/doctor/addnewdocor", isAdminAuthenticated, addNewDoctor);
+
 
 export default router;

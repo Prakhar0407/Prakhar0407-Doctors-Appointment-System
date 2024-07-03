@@ -49,6 +49,7 @@ const Sidebar = () => {
     navigateTo("/doctor/addadmin");
     setShow(!show);
   };
+
   const gotoAddNewAdmin = () => {
     navigateTo("/admin/addadmin");
     setShow(!show);
@@ -67,6 +68,7 @@ const Sidebar = () => {
           <FaCommentAlt onClick={gotoMessagesPage} title="Messages"/>
           <FaUserDoctor onClick={gotoDoctorsPage} title="Doctors"/>
           <MdLogout onClick={handleLogout} title="Logout"/>
+      
         </div>
       </nav>
       <div

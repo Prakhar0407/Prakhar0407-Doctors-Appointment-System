@@ -40,12 +40,14 @@ const App = () => {
     <Router>
       <Sidebar />
       <Routes>
+        <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/doctor/addadmin" element={<AddNewDoctor />} />
         <Route path="/admin/addadmin" element={<AddNewAdmin />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/doctors" element={<Doctors />} />
+
       </Routes>
       <ToastContainer position="top-center" />
     </Router>

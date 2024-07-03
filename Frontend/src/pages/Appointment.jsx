@@ -6,9 +6,6 @@ const Appointment = () => {
   return (
     <><div class = "frontHead">
       <MainBody
-
-
-  
       /> </div>
       <AppointmentForm/>
     </>

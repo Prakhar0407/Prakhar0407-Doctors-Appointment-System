@@ -60,19 +60,17 @@ const Dashboard = () => {
       <section className="dashboard page">
         <div className="banner">
           <div className="firstBox">
-            <img src="/doc.png" alt="docImg" />
+            <img src="/docAtPat.png" alt="docImg" />
             <div className="content">
               <div>
-                <p>Hello ,</p>
-                <h5>
+                <p>Welcome! </p>
+                <p>
                   {admin &&
                     `${admin.firstName} ${admin.lastName}`}{" "}
-                </h5>
+                </p>
               </div>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
-                Assumenda repellendus necessitatibus itaque.
+                Let's see What are the new appointments. You can add Doctors and can update visiti settings here. 
               </p>
             </div>
           </div>

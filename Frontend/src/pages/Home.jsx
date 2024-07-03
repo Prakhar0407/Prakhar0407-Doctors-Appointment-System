@@ -1,18 +1,22 @@
 import React, { useContext } from "react";
 import MainBody from "../components/MainBody";
 import Departments from "../components/Departments";
-
+import { Context } from "../main";
 
 const Home = () => {
+
+const{user}= useContext(Context);
+
   return (
     <>
       <MainBody
         title={
           <div class="titleHead">
-          "Welcome! 
-          </div>
+          "Welcome! <h1>{user &&
+                    `${user.firstName} ${user.lastName}`}</h1></div>
         }
-        
+
+       
         appointmentButton={
           <a href="/appointment">
           <button class="appointButton">
@@ -20,6 +24,8 @@ const Home = () => {
           </button>
           </a>
         }
+
+
 
         
 

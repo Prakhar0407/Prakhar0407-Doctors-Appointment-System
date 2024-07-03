@@ -11,7 +11,6 @@ const AddNewDoctor = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [password, setPassword] = useState("");
@@ -57,7 +56,7 @@ const AddNewDoctor = () => {
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
       await axios
-        .post("http://localhost:4000/api/v1/user/doctor/addadmin", formData, {
+        .post("http://localhost:4000/api/v1/user/doctor/addnewdoctor", formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

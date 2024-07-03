@@ -14,6 +14,8 @@ import axios from "axios";
 import { Context } from "./main";
 import Login from "./pages/Login";
 import News from "./pages/News";
+import AppointmentList from "./pages/AppointmentList.jsx";
+
 
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
@@ -50,6 +52,10 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/news" element={<News />} />
+          <Route path="/appointments" element={<AppointmentList />} />
+
+        
+       
         </Routes>
         <Footer />
         <ToastContainer position="top-center" />
