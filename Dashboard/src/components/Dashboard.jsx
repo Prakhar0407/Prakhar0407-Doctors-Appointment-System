@@ -107,7 +107,9 @@ const Dashboard = () => {
                               ? "value-pending"
                               : appointment.status === "Accepted"
                               ? "value-accepted"
-                              : "value-rejected"
+                              : appointment.status === "Rejected"
+                              ? "value-rejected"
+                              : "value-done"
                           }
                           value={appointment.status}
                           onChange={(e) =>
@@ -123,16 +125,23 @@ const Dashboard = () => {
                           <option value="Rejected" className="value-rejected">
                             Rejected
                           </option>
+                          <option value="Done" className="value-done">
+                            Done
+                          </option>
                         </select>
                       </td>
                       <td>
-                        <Rating
-                          count={5}
-                          value={parseInt(appointment.rate, 10)}
-                          size={24}
-                          activeColor="#ffd700"
-                          edit={false} 
-                        />
+                        {appointment.status === "Done" ? (
+                          <Rating
+                            count={5}
+                            value={parseInt(appointment.rate, 10)}
+                            size={24}
+                            activeColor="#ffd700"
+                            edit={false}
+                          />
+                        ) : (
+                          <span>-</span>
+                        )}
                       </td>
                       <td>{appointment.hasVisited === true ? <GoCheckCircleFill className="green"/> : <AiFillCloseCircle className="red"/>}</td>
                     </tr>

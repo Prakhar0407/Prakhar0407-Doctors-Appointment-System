@@ -89,14 +89,20 @@ const AppointmentList = () => {
                       <td>
                         {appointment.status === "Pending" ? (
                           <span className="value-pending">Pending</span>
-                        ) : appointment.status === "Accepted" ? (
+                        )
+                         : appointment.status === "Accepted" ? (
                           <span className="value-accepted">Accepted</span>
-                        ) : (
+                        )
+                         : appointment.status === "Rejected" ? (
                           <span className="value-rejected">Rejected</span>
+                        )
+                    
+                         :    (
+                          <span className="value-done">Done</span>
                         )}
                       </td>
                       <td>
-                        {appointment.status === "Accepted" ? (
+                        {appointment.status === "Done" ? (
                           <Rating
                             count={5}
                             value={parseInt(appointment.rate, 10)}
