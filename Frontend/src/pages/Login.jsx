@@ -48,8 +48,7 @@ const Login = () => {
         <h2>Sign In</h2>
         <p>Please Login To Continue</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
-          voluptas expedita itaque ex, totam ad quod error?
+         
         </p>
         <form onSubmit={handleLogin}>
           <input
@@ -73,9 +72,9 @@ const Login = () => {
             }}
           >
             <p style={{ marginBottom: 0 }}>Not Registered?</p>
-            <Link
+            <Link className="regBtn"
               to={"/register"}
-              style={{ textDecoration: "none", color: "#271776ca" }}
+        
             >
               Register Now
             </Link>

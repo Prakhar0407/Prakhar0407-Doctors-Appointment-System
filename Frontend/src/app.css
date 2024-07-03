@@ -1,6 +1,6 @@
 /* Home */
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -346,16 +346,26 @@ nav .navLinks .links {
   }
   .form-component button {
     padding: 10px 35px;
-    color: #000;
-    font-weight: 700;
-    width: fit-content;
-    border: none;
-    border-radius: 8px;
+    color: white ;
     font-size: 24px;
     margin-bottom: 30px;
-    background: linear-gradient(140deg, aqua, green);
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    border-radius: 9px;
   }
-
+  .form-component button:hover {
+background-color: aqua;
+color: black;
+  }
+  .loginbtnreg{
+    color:blue;
+    text-decoration: none;
+  }
+  .loginbtnreg:hover{
+    color:blue;
+    text-decoration: underline;
+  }
   .form-component .wrapper {
     display: flex;
     gap: 50px;
@@ -797,3 +807,147 @@ margin-left: 450px;
 .appcnt{
 color:green;
 }
+
+
+.container.form-component.login-form {
+
+  max-width: 400px;
+  margin-left: 35%;
+  margin-top: 200px;
+  margin-bottom: 400px;
+  padding: 20px;
+  border: 3px solid aqua ;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+
+
+.container.form-component.login-form h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+.container.form-component.login-form p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.container.form-component.login-form input[type="text"],
+.container.form-component.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #ddd;
+}
+.container.form-component.login-form input:hover[type="text"],
+.container.form-component.login-form input:hover[type="password"] {
+background-color: aqua;
+}
+
+
+.container.form-component.login-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background: black;
+}
+
+.container.form-component.login-form button[type="submit"]:hover {
+  background-color: aqua;
+  color: black;
+}
+
+.regBtn{
+  color:blue;
+  text-decoration: none;
+}
+.regBtn:hover{
+  color:blue;
+  text-decoration: underline;
+}
+.container.form-component.login-form .register-link p {
+  margin-bottom: 0;
+}
+
+
+
+.container.form-component.login-form form div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* Container for the form */
+.container.form-component.register-form {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 400px;
+  margin-top: 120px;
+
+}
+
+/* Form title */
+.container.form-component.register-form h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+.container.form-component.register-form p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container.form-component.register-form input[type="text"],
+.container.form-component.register-form input[type="number"],
+.container.form-component.register-form input[type="password"],
+.container.form-component.register-form input[type="date"],
+.container.form-component.register-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background: #ddd;
+}
+.container.form-component.register-form input:hover[type="text"],
+.container.form-component.register-form input:hover[type="number"],
+.container.form-component.register-form input:hover[type="password"],
+.container.form-component.register-form input:hover[type="date"],
+.container.form-component.register-form select:hover {
+background: aqua;
+}
+
+.dobReg{
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+
+
+

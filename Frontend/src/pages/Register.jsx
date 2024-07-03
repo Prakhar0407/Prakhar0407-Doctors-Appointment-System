@@ -56,8 +56,6 @@ const Register = () => {
         <h2>Sign Up</h2>
         <p>Please Sign Up To Continue</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
-          voluptas expedita itaque ex, totam ad quod error?
         </p>
         <form onSubmit={handleRegistration}>
           <div>
@@ -89,8 +87,8 @@ const Register = () => {
             />
           </div>
            <div>
-    
-            <input
+            <span className="dobReg">Date of Birth :-</span>
+            <input 
               type={"date"}
               placeholder="Date of Birth"
               value={dob}
@@ -118,9 +116,8 @@ const Register = () => {
             }}
           >
             <p style={{ marginBottom: 0 }}>Already Registered?</p>
-            <Link
+            <Link className="loginbtnreg"
               to={"/signin"}
-              style={{ textDecoration: "none", color: "#271776ca" }}
             >
               Login Now
             </Link>
