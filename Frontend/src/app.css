@@ -1,0 +1,953 @@
+/* Home */
+
+@import url("https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+    background-color: #000;
+  }
+
+.titleHead{
+    color: aqua;
+  }
+
+  /* Navbar */
+  nav .logo {
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+  }
+
+nav {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  margin: 0px 10px;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  z-index: 2;
+  background-color: aqua;
+ 
+}
+nav .navLinks {
+  flex: 2;
+  position: fixed;
+  display: flex;
+  padding: 25px 0px 10px 10px; 
+  text-decoration: none;
+
+  border-radius: 5px;
+  color: #000; 
+  justify-content: space-between;
+  align-items: center;
+  
+}
+nav .navLinks .links {
+    display: flex;
+    gap: 20px;
+  
+  }
+  nav .navLinks .links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: aqua; /* Link text color */
+    background-color: #000; /* Background color */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  nav .navLinks .links a:hover {
+    color: red;
+    transition: 0.3s;
+    cursor: pointer;
+    text-shadow: 100px;
+    border-color: red;
+    border-radius: 15px;
+  }
+
+  /* Login */
+
+
+  nav .loginBtn {
+    background-color: red;
+    color: black;
+  
+  }
+  nav .loginBtn:hover {
+    background-color: black;
+    color: aqua;
+  }
+
+  /* Logout */
+
+
+  nav .logoutBtn {
+    margin-top: 20px;
+    background: linear-gradient(135deg, black, rgb(49, 49, 49));
+  }
+
+  /* Nav Button */
+
+
+  nav .btn {
+    padding: 8px 20px;
+   background: transparent;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 2;
+    color: red;
+  }
+  nav .btn:hover{
+  
+    color: Red;
+    background-color: black;
+  
+  }
+  nav svg {
+    font-size: 1.75rem;
+  }
+  @media (max-width: 1520px) {
+    nav {
+      min-width: 100%;
+      padding: 25px 20px 40px 20px;
+  
+    }
+  }
+  nav .hamburger {
+    display: none;
+    color: #000;
+  }
+
+    /* Menu Button */
+
+    @media (max-width: 1100px) {
+        nav {
+          background: aqua;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        nav .hamburger {
+          display: flex;
+        }
+        nav .navLinks {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding: 15px 7.5px;
+          z-index: 2;
+          transition: 0.3s;
+          position: fixed;
+          left: 0;
+          height: 100%;
+          width: 400px;
+          background: #000000bf;
+          top: 79px;
+          
+          
+        }
+        nav .showmenu {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          padding: 10px 7.5px;
+          z-index: 2;
+          transition: 0.3s;
+          position: fixed;
+          left: -100%;
+          width: 400px;
+          height: 100%;
+          background: #000000bf;
+          top: 79px;
+          
+          
+        }
+
+        @media (max-width: 800px) {
+  nav .showmenu {
+    width: 96vw;
+  }
+}
+@media (max-width: 650px) {
+  nav .showmenu {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+@media (max-width: 555px) {
+  nav {
+    background: #000;
+  }
+  nav .navLinks {
+    background: #000;
+    width: 100%;
+  }
+}
+
+        nav .navLinks .links {
+          flex-direction: column;
+          text-align: center;
+          
+        }
+        nav .navLinks .links a {
+          font-weight: 700;
+          display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: 3px solid aqua;
+        border-radius: 5px;
+        background-color: #000;
+        color: aqua; 
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav .navLinks .links a:hover{
+          
+        border: 3px solid red;
+        background-color: #fff; 
+        color: red; 
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav .logoutBtn {
+          margin-top: 20px;
+      
+        }
+      }
+
+      @media (max-width: 800px) {
+        nav .showmenu {
+          width: 96vw;
+        }
+      }
+      @media (max-width: 650px) {
+        nav .showmenu {
+          margin: 0;
+          width: 100%;
+          border-radius: 0;
+        }
+      }
+      @media (max-width: 555px) {
+        nav {
+          background: #000;
+        }
+        nav .navLinks {
+          background: #000;
+          width: 100%;
+        }
+      }
+
+  
+  /* Book Appointment Button */
+
+  .appointButton{
+    color:red;
+    background-color: #fff;
+    margin-left: 570px;
+    height: 80px;
+    width: 400px;
+  
+  }
+  .appointButton:hover{
+    background-color: aqua;
+    color: black;
+  }
+
+  /* Login */
+
+  .login-form {
+    margin: 100px auto 20px auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  .login-form h2 {
+    color: green;
+  }
+
+  /* Register */
+
+  .register-form {
+    max-width: 1200px;
+    margin: 100px auto 20px auto;
+  }
+
+  .register-form h2 {
+    color: green;
+  }
+
+  .container {
+    padding: 0 20px;
+    margin: 0 0px;
+  
+  
+  }
+  @media (max-width: 700px) {
+    .container {
+      padding: 0 20px;
+  
+    }
+  }
+
+  .form-component h2 {
+
+    color: green;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    background-color: aqua;
+    text-align: center;
+  }
+  .form-component h4 {
+    color: green;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .form-component p {
+    max-width: 750px;
+    color: green;
+    margin-bottom: 20px;
+  }
+  .form-component form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .form-component form div {
+    display: flex;
+    gap: 30px;
+  }
+  .form-component form input,
+  .form-component form select,
+  .form-component form textarea {
+    flex: 1;
+    font-size: 24px;
+    padding: 10px 10px 10px 40px;
+    border-radius: 7px;
+    border: 1px solid green;
+    color: purple;
+  }
+  .form-component button {
+    padding: 10px 35px;
+    color: white ;
+    font-size: 24px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    border-radius: 9px;
+  }
+  .form-component button:hover {
+background-color: aqua;
+color: black;
+  }
+  .loginbtnreg{
+    color:blue;
+    text-decoration: none;
+  }
+  .loginbtnreg:hover{
+    color:blue;
+    text-decoration: underline;
+  }
+  .form-component .wrapper {
+    display: flex;
+    gap: 50px;
+  }
+  .form-component .wrapper .banner {
+    flex: 1;
+  }
+  .form-component .wrapper .banner:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-component .wrapper .banner:last-child img {
+    max-width: 450px;
+  }
+
+  @media (max-width: 888px) {
+    .form-component {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    .form-component form div {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 667px) {
+    .form-component form input,
+    .form-component form select,
+    .form-component form textarea {
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
+
+  /* Message */
+
+  .message-form {
+    position: relative;
+  }
+  .message-form h2 {
+    text-align: center;
+    color: green;
+    position: relative;
+  }
+  .message-form img {
+    position: absolute;
+    top: 0;
+    right: -16%;
+    height: 600px;
+    z-index: -1;
+  }
+  @media (max-width: 700px) {
+    .message-form img {
+      right: -35%;
+      height: 450px;
+      top: 10%;
+    }
+  }
+
+
+
+
+  /* Department */
+
+  .departments {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .departments h2 {
+    color: green;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    position: relative;
+    border-radius: 8px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 20px;
+    min-height: 360px;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  .card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  .card .depart-name {
+    margin-bottom: 30px;
+    background: g;
+    width: 320px;
+    font-size: 24px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 30px;
+    left: 0;
+    height: fit-content;
+    font-weight: 700;
+  }
+  
+/* Send Message */
+
+.afterSend {
+
+    display: flex;
+    justify-content: center;
+   align-items: center;
+  
+  
+  }
+  
+  /* Landing Page Front */
+
+  .hero {
+    display: flex;
+    gap: 50px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    position: relative;
+  }
+  .hero .banner {
+    flex: 1;
+  }
+  .hero .banner h1,
+  .hero .banner p {
+    max-width: 650px;
+  }
+  .hero .banner h1 {
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    font-size: 40px;
+  }
+
+  .hero .banner span {
+    position: absolute;
+    right: -300px;
+    top: -200px;
+    z-index: -1;
+  }
+  .hero .banner:first-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .hero .banner:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+  }
+
+/* Appointment */
+
+.frontHead {
+    background: url('/departments/bgcover.jpg');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+  
+  }
+
+  @media (max-width: 1110px) {
+    .appointment-form form div:nth-child(4) {
+      flex-direction: column;
+    }
+    .appointment-form form div:nth-child(5) {
+      flex-direction: column;
+    }
+  }
+
+  .textForDetails{
+    color: aqua;
+    font-style: italic;
+    margin-top: 11px;
+  }
+
+  .getInTouch{
+    margin-top: 130px;
+  }
+.details{
+  color:red;
+}
+
+/* News */
+
+.container_news {
+  padding: 16px;
+}
+
+.grid_news {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card_news {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  color: white;
+}
+.card_news:hover{
+  color: aqua;
+  background-color: green;
+}
+
+.card_news a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.image_news {
+  width: 100%;
+  height: auto;
+}
+
+.content_news {
+  padding: 16px;
+}
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard .banner:first-child {
+  height: 35vh;
+  display: flex;
+  gap: 20px;
+}
+.dashboard .banner:first-child  .h5{
+color:green;
+}
+.dashboard .banner:first-child .firstBox {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background: #b5b5ff;
+  padding: 20px 20px 0 10px;
+}
+.dashboard .banner:first-child .firstBox img {
+  height: 100%;
+  flex: 1;
+
+}
+.dashboard .banner:first-child .firstBox .content {
+  flex: 2;
+}
+.dashboard .banner:first-child .firstBox .content div {
+  display: flex;
+  align-items: center;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+.dashboard .banner:first-child .firstBox .content div p {
+  margin-right: 10px;
+  font-size: 34px;
+}
+.dashboard .banner:first-child .firstBox .content div h5 {
+  color: #ff008d;
+}
+.dashboard .banner:first-child .firstBox .content p {
+  font-size: 16px;
+}
+.dashboard .banner:first-child .secondBox {
+  background: #3939d9f2;
+  color: #000;
+}
+.dashboard .banner:first-child .thirdBox {
+  color: #ff008d;
+  background: #000;
+}
+.dashboard .banner:first-child .secondBox,
+.dashboard .banner:first-child .thirdBox {
+  flex: 1;
+  border-radius: 20px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.dashboard .banner:first-child .secondBox p,
+.dashboard .banner:first-child .thirdBox p {
+  font-size: 24px;
+  font-weight: 600;
+}
+.dashboard .banner:first-child .secondBox h3,
+.dashboard .banner:first-child .thirdBox h3 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.dashboard .banner:last-child {
+  height: 65vh;
+  background: #000;
+  border-radius: 20px;
+  padding: 40px;
+}
+.dashboard .banner:last-child h5 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #111;
+}
+.dashboard .banner table {
+  width: 100%;
+  color: #111;
+  font-size: 20px;
+}
+.dashboard .banner table select {
+  font-size: 20px;
+  border: none;
+  width: 100%;
+  font-weight: 600;
+}
+.dashboard table td svg{
+  display: flex;
+  margin: 0 auto;
+}
+.dashboard table td .green{
+  font-size: 20px;
+  color: #16a34a;
+}
+.dashboard table td .red{
+  font-size: 20px;
+  color: #dc2626;
+}
+.dashboard .banner table select:focus {
+  outline: none;
+}
+.dashboard .banner table .value-pending {
+  color: #eab308;
+}
+.dashboard .banner table .value-accepted {
+  color: #16a34a;
+}
+.dashboard .banner table .value-rejected {
+  color: #dc2626;
+}
+.dashboard .banner table thead {
+  text-align: justify;
+  padding: 12px 0;
+}
+.dashboard .banner table thead th {
+  padding: 12px 0;
+}
+.dashboard .banner table tbody td {
+  padding: 12px 0;
+}
+@media (max-width: 1376px) {
+  .dashboard .banner:first-child .firstBox .content div,
+  .dashboard .banner:first-child .firstBox .content div p {
+    font-size: 26px;
+  }
+  .dashboard .banner:first-child .firstBox .content p {
+    font-size: 14px;
+  }
+  .dashboard .banner:first-child .secondBox p,
+  .dashboard .banner:first-child .thirdBox p,
+  .dashboard .banner:first-child .secondBox h3,
+  .dashboard .banner:first-child .thirdBox h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1020px) {
+  .dashboard {
+    height: fit-content;
+  }
+  .dashboard .banner:first-child,
+  .dashboard .banner:last-child {
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+  .dashboard .banner:first-child .firstBox {
+    flex: none;
+    width: 100%;
+    height: 265px;
+  }
+  .dashboard .banner:first-child .secondBox,
+  .dashboard .banner:first-child .thirdBox {
+    height: 175px;
+  }
+}
+@media (max-width: 620px) {
+  .dashboard .banner:first-child .secondBox,
+  .dashboard .banner:first-child .thirdBox {
+    width: 100%;
+    flex: none;
+  }
+}
+@media (max-width: 485px) {
+  .dashboard .banner:first-child .firstBox {
+    flex-direction: column;
+    height: fit-content;
+    padding: 20px;
+  }
+  .dashboard .banner:first-child .firstBox img {
+    width: 270px;
+    height: 270px;
+    margin-bottom: 25px;
+  }
+  .dashboard .banner:first-child .firstBox div {
+    justify-content: center;
+  }
+}
+.AppointmentWritten{
+  color: yellow;
+
+}
+.TitleTextAppointment{
+  color:white;
+background-color: red;
+width: 500px;
+text-align: center;
+margin-left: 450px;
+}
+.AppointmentHeading{
+  color:aqua;
+
+}
+.appcnt{
+color:green;
+}
+
+
+.container.form-component.login-form {
+
+  max-width: 400px;
+  margin-left: 35%;
+  margin-top: 200px;
+  margin-bottom: 400px;
+  padding: 20px;
+  border: 3px solid aqua ;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+
+
+.container.form-component.login-form h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+.container.form-component.login-form p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.container.form-component.login-form input[type="text"],
+.container.form-component.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #ddd;
+}
+.container.form-component.login-form input:hover[type="text"],
+.container.form-component.login-form input:hover[type="password"] {
+background-color: aqua;
+}
+
+
+.container.form-component.login-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background: black;
+}
+
+.container.form-component.login-form button[type="submit"]:hover {
+  background-color: aqua;
+  color: black;
+}
+
+.regBtn{
+  color:blue;
+  text-decoration: none;
+}
+.regBtn:hover{
+  color:blue;
+  text-decoration: underline;
+}
+.container.form-component.login-form .register-link p {
+  margin-bottom: 0;
+}
+
+
+
+.container.form-component.login-form form div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* Container for the form */
+.container.form-component.register-form {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 400px;
+  margin-top: 120px;
+
+}
+
+/* Form title */
+.container.form-component.register-form h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+
+.container.form-component.register-form p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container.form-component.register-form input[type="text"],
+.container.form-component.register-form input[type="number"],
+.container.form-component.register-form input[type="password"],
+.container.form-component.register-form input[type="date"],
+.container.form-component.register-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background: #ddd;
+}
+.container.form-component.register-form input:hover[type="text"],
+.container.form-component.register-form input:hover[type="number"],
+.container.form-component.register-form input:hover[type="password"],
+.container.form-component.register-form input:hover[type="date"],
+.container.form-component.register-form select:hover {
+background: aqua;
+}
+
+.dobReg{
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+
+
+
