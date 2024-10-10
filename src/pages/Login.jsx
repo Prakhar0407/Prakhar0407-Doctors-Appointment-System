@@ -20,6 +20,7 @@ const Login = () => {
         .post(
           `https://prakhar0407-doctors-appointment-system.onrender.com/api/v1/user/login`,
           { email, password, role: "Patient" },
+          
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
