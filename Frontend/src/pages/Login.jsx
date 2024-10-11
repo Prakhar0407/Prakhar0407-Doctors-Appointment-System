@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/login",
+          "https://prakhar0407-doctors-appointment-system.onrender.com/api/v1/user/login",
           { email, password, role: "Patient" },
           {
             withCredentials: true,

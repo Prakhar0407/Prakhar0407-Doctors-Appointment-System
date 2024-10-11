@@ -26,7 +26,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/patient/me",
+          "https://prakhar0407-doctors-appointment-system.onrender.com/api/v1/user/patient/me",
           {
             withCredentials: true,
           }
