@@ -17,7 +17,7 @@ const AppointmentList = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "https://prakhar0407-doctors-appointment-system.onrender.com/api/v1/appointment/getall",
+          "http://localhost:4000/api/v1/appointment/getall",
           { withCredentials: true }
         );
         const filteredAppointments = data.appointments.filter(
@@ -42,7 +42,7 @@ const AppointmentList = () => {
   const handleUpdaterate = async (appointmentId, rate) => {
     try {
       const { data } = await axios.put(
-        `https://prakhar0407-doctors-appointment-system.onrender.com/api/v1/appointment/update/${appointmentId}`,
+        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
         { rate },
         { withCredentials: true }
       );
