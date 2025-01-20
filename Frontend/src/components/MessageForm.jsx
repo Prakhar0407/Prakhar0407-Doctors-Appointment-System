@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-const VITE_BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL ||"http://localhost:4000";
 const MessageForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");

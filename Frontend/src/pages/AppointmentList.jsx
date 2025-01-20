@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { GoCheckCircleFill } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Rating from 'react-rating-stars-component';
-const VITE_BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL ||"http://localhost:4000";
 const AppointmentList = () => {
   const [appointments, setAppointments] = useState([]);
   const [totalCount, setTotalAppointmentCount] = useState(0);

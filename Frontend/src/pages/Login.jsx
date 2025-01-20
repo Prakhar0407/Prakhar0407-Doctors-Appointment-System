@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { Context } from "../main";
 import { Link, useNavigate, Navigate } from "react-router-dom";
-const VITE_BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL ||"http://localhost:4000";
 const Login = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 

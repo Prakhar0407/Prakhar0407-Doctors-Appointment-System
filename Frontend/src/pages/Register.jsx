@@ -6,7 +6,6 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 const VITE_BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
 const Register = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");

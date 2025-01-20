@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Context } from "../main";
-const VITE_BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL ||"http://localhost:4000" ;
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
