@@ -16,8 +16,7 @@ import Login from "./pages/Login";
 import News from "./pages/News";
 import AppointmentList from "./pages/AppointmentList.jsx";
 import AddReview from "./pages/AddReview.jsx";
-
-
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(Context);
@@ -26,7 +25,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/patient/me",
+          `${VITE_BASE_URL}/api/v1/user/patient/me`,
           {
             withCredentials: true,
           }

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { GoCheckCircleFill } from "react-icons/go";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Rating from 'react-rating-stars-component';
-
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
 const AppointmentList = () => {
   const [appointments, setAppointments] = useState([]);
   const [totalCount, setTotalAppointmentCount] = useState(0);
@@ -17,7 +17,7 @@ const AppointmentList = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/getall",
+          `${VITE_BASE_URL}/api/v1/appointment/getall`,
           { withCredentials: true }
         );
         const filteredAppointments = data.appointments.filter(
@@ -28,7 +28,7 @@ const AppointmentList = () => {
         setTotalAppointmentCount(count);
       } catch (error) {
         setAppointments([]);
-        toast.error("Failed to fetch appointments.");
+        toast.error("Sign in to see Appointments!");
       }
     };
     fetchAppointments();
@@ -42,7 +42,7 @@ const AppointmentList = () => {
   const handleUpdaterate = async (appointmentId, rate) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `${VITE_BASE_URL}/api/v1/appointment/update/${appointmentId}`,
         { rate },
         { withCredentials: true }
       );

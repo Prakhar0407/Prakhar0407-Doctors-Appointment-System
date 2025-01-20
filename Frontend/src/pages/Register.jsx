@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { Context } from "../main";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-
+const VITE_BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:4000";
 const Register = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
@@ -22,7 +22,7 @@ const Register = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/patient/register",
+          `${VITE_BASE_URL}/api/v1/user/patient/register`,
           { firstName, lastName, email, phone, dob, gender, password },
           {
             withCredentials: true,
