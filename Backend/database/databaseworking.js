@@ -4,6 +4,7 @@ export const databaseworking = () => {
   
     mongoose.connect(process.env.MONGO_URI, {
       dbName: "DOCTORS-APPOINTMENT-APP",  
+      
     })
     .then(() => {
       console.log("Connected to database!");
