@@ -2,7 +2,7 @@ import express from "express";
 
 import {
 postAppointment, getAllAppointments ,   deleteAppointment,  updateAppointmentStatus,
-} from "../controller/appointmentControl";
+} from "../controller/appointmentControl.js";
 
 import {
   isPatientAuthenticated,isAdminAuthenticated
