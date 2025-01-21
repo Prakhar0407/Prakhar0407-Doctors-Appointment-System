@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          `${VITE_BASE_URL}/api/v1/user/login`,
+          `https://docapp-om26.onrender.com/api/v1/user/login`,
           { email, password, role: "Patient" },
           {
             withCredentials: true,

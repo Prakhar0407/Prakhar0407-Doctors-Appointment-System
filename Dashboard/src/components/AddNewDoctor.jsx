@@ -56,7 +56,7 @@ const AddNewDoctor = () => {
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
       await axios
-        .post("http://localhost:4000/api/v1/user/doctor/addnewdoctor", formData, {
+        .post(`https://docapp-om26.onrender.com/api/v1/user/doctor/addnewdoctor`, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

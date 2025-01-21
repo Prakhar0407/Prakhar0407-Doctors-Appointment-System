@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
-const VITE_BASE_URL = import.meta.env.VITE_BASE_URL ||"http://localhost:4000";
+
 const AppointmentForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -34,7 +34,7 @@ const AppointmentForm = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
-        `${VITE_BASE_URL}/api/v1/user/doctors`,
+        `https://docapp-om26.onrender.com/api/v1/user/doctors`,
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -47,7 +47,7 @@ const AppointmentForm = () => {
     try {
       const hasVisitedBool = Boolean(hasVisited);
       const { data } = await axios.post(
-        `${VITE_BASE_URL}/api/v1/appointment/post`,
+        `https://docapp-om26.onrender.com/api/v1/appointment/post`,
         {
           firstName,
           lastName,
