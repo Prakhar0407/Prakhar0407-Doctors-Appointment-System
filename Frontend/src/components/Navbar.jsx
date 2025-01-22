@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get(`https://docapp-om26.onrender.com/api/v1/user/patient/logout`, {
+      .get(`https://docapp-e59f.onrender.com/api/v1/user/patient/logout`, {
         withCredentials: true,
       })
       .then((res) => {

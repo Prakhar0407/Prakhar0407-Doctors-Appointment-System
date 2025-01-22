@@ -19,7 +19,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get(`https://docapp-om26.onrender.com/api/v1/user/admin/logout`, {
+      .get(`https://docapp-e59f.onrender.com/api/v1/user/admin/logout`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -46,7 +46,7 @@ const Sidebar = () => {
     setShow(!show);
   };
   const gotoAddNewDoctor = () => {
-    navigateTo("/doctor/addadmin");
+    navigateTo("/doctor/adddoctor");
     setShow(!show);
   };
 

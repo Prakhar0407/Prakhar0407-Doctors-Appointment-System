@@ -15,7 +15,7 @@ const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          `https://docapp-om26.onrender.com/api/v1/appointment/getall`,
+          `https://docapp-e59f.onrender.com/api/v1/appointment/getall`,
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -31,7 +31,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `https://docapp-om26.onrender.com/api/v1/appointment/update/${appointmentId}`,
+        `https://docapp-e59f.onrender.com/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );

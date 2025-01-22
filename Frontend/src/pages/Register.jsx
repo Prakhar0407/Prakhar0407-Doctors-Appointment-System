@@ -21,7 +21,7 @@ const Register = () => {
     try {
       await axios
         .post(
-          `https://docapp-om26.onrender.com/api/v1/user/patient/register`,
+          `https://docapp-e59f.onrender.com/api/v1/user/patient/register`,
           { firstName, lastName, email, phone, dob, gender, password },
           {
             withCredentials: true,
