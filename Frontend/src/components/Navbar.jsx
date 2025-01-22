@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get(`https://docapp-e59f.onrender.com/api/v1/user/patient/logout`, {
+      .get(`https://docapp-server-atoj.onrender.com/api/v1/user/patient/logout`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -50,6 +50,7 @@ const Navbar = () => {
             <Link to={"/news"} onClick={() => setShow(!show)}>
               News
             </Link>
+            
       
           </div>   
                </div>

@@ -11,7 +11,7 @@ const Messages = () => {
     const fetchMessages = async () => {
       try {
         const { data } = await axios.get(
-          `https://docapp-e59f.onrender.com/api/v1/message/getall`,
+          `https://docapp-server-atoj.onrender.com/api/v1/message/getall`,
           { withCredentials: true }
         );
         setMessages(data.messages);

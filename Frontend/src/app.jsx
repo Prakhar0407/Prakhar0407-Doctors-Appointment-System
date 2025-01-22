@@ -25,7 +25,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          `https://docapp-e59f.onrender.com/api/v1/user/patient/me`,
+          `https://docapp-server-atoj.onrender.com/api/v1/user/patient/me`,
           {
             withCredentials: true,
           }

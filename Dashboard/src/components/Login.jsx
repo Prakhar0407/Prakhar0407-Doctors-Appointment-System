@@ -17,7 +17,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          `https://docapp-e59f.onrender.com/api/v1/user/login`,
+          `https://docapp-server-atoj.onrender.com/api/v1/user/login`,
           { email, password, role: "Admin" },
           {
             withCredentials: true,
