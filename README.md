@@ -25,7 +25,7 @@ Ensure you have **Node.js** and **MongoDB** installed on your system.
 ### Steps to Run
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/doctors-appointment-system.git
+   git clone https://github.com/Prakhar0407/Prakhar0407-Doctors-Appointment-System.git
    cd doctors-appointment-system
    ```
 
