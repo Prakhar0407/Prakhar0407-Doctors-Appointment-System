@@ -31,11 +31,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-<<<<<<< HEAD
         `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
-=======
-        `https://docapp-server-atoj.onrender.com/api/v1/appointment/update/${appointmentId}`,
->>>>>>> 6025e4bbb85f728086851b9467e902699a712691
         { status },
         { withCredentials: true }
       );
