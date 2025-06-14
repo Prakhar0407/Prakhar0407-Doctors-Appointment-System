@@ -13,13 +13,9 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchAppointments = async () => {
-      try {
+       try {
         const { data } = await axios.get(
-<<<<<<< HEAD
-          `http://localhost:4000/api/v1/appointment/getall`,
-=======
-          `https://docapp-server-atoj.onrender.com/api/v1/appointment/getall`,
->>>>>>> 6025e4bbb85f728086851b9467e902699a712691
+          "http://localhost:4000/api/v1/appointment/getall",
           { withCredentials: true }
         );
         setAppointments(data.appointments);
