@@ -15,7 +15,7 @@ const Navbar = () => {
 <<<<<<< HEAD
       .get(`http://localhost:4000/api/v1/user/patient/logout`, {
 =======
-      .get(`https://docapp-server-atoj.onrender.com/api/v1/user/patient/logout`, {
+.get(`http://localhost:4000/api/v1/user/patient/logout`, {
 >>>>>>> 6025e4bbb85f728086851b9467e902699a712691
         withCredentials: true,
       })
