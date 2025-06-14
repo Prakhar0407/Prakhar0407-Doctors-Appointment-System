@@ -19,11 +19,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-<<<<<<< HEAD
-      .get(`http://localhost:4000/api/v1/user/admin/logout`, {
-=======
-      .get(`https://docapp-server-atoj.onrender.com/api/v1/user/admin/logout`, {
->>>>>>> 6025e4bbb85f728086851b9467e902699a712691
+      .get("http://localhost:4000/api/v1/user/admin/logout", {
         withCredentials: true,
       })
       .then((res) => {
@@ -34,6 +30,7 @@ const Sidebar = () => {
         toast.error(err.response.data.message);
       });
   };
+
 
   const navigateTo = useNavigate();
 
