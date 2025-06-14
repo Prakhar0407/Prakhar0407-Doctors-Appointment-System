@@ -19,14 +19,10 @@ const AddNewAdmin = () => {
 
   const handleAddNewAdmin = async (e) => {
     e.preventDefault();
-    try {
+     try {
       await axios
         .post(
-<<<<<<< HEAD
-          `http://localhost:4000/api/v1/user/admin/addadmin`,
-=======
-          `https://docapp-server-atoj.onrender.com/api/v1/user/admin/addadmin`,
->>>>>>> 6025e4bbb85f728086851b9467e902699a712691
+          "http://localhost:4000/api/v1/user/admin/addadmin",
           { firstName, lastName, email, phone, dob, gender, password },
           {
             withCredentials: true,
