@@ -11,7 +11,11 @@ const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
+<<<<<<< HEAD
           `http://localhost:4000/api/v1/user/doctors`,
+=======
+          `https://docapp-server-atoj.onrender.com/api/v1/user/doctors`,
+>>>>>>> 6025e4bbb85f728086851b9467e902699a712691
           { withCredentials: true }
         );
         setDoctors(data.doctors);

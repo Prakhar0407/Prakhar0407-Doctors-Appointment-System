@@ -14,7 +14,11 @@ const MessageForm = () => {
     try {
       await axios
         .post(
+<<<<<<< HEAD
           `http://localhost:4000/api/v1/message/send`,
+=======
+          `https://docapp-server-atoj.onrender.com/api/v1/message/send`,
+>>>>>>> 6025e4bbb85f728086851b9467e902699a712691
           { firstName, lastName, email, phone, message },
           {
             withCredentials: true,

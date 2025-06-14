@@ -17,7 +17,11 @@ const Login = () => {
     try {
       await axios
         .post(
+<<<<<<< HEAD
           "http://localhost:4000/api/v1/user/login",
+=======
+          `https://docapp-server-atoj.onrender.com/api/v1/user/login`,
+>>>>>>> 6025e4bbb85f728086851b9467e902699a712691
           { email, password, role: "Patient" },
           {
             withCredentials: true,
