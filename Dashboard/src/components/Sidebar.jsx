@@ -19,7 +19,11 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/admin/logout", {
+<<<<<<< HEAD
+      .get(`http://localhost:4000/api/v1/user/admin/logout`, {
+=======
+      .get(`https://docapp-server-atoj.onrender.com/api/v1/user/admin/logout`, {
+>>>>>>> 6025e4bbb85f728086851b9467e902699a712691
         withCredentials: true,
       })
       .then((res) => {
@@ -46,7 +50,7 @@ const Sidebar = () => {
     setShow(!show);
   };
   const gotoAddNewDoctor = () => {
-    navigateTo("/doctor/addadmin");
+    navigateTo("/doctor/adddoctor");
     setShow(!show);
   };
 

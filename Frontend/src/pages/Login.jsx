@@ -10,7 +10,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
   const navigateTo = useNavigate();
 
   const handleLogin = async (e) => {
@@ -18,7 +17,11 @@ const Login = () => {
     try {
       await axios
         .post(
+<<<<<<< HEAD
           "http://localhost:4000/api/v1/user/login",
+=======
+          `https://docapp-server-atoj.onrender.com/api/v1/user/login`,
+>>>>>>> 6025e4bbb85f728086851b9467e902699a712691
           { email, password, role: "Patient" },
           {
             withCredentials: true,
@@ -31,8 +34,7 @@ const Login = () => {
           navigateTo("/");
           setEmail("");
           setPassword("");
-    
-         });
+        });
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -47,9 +49,7 @@ const Login = () => {
       <div className="container form-component login-form">
         <h2>Sign In</h2>
         <p>Please Login To Continue</p>
-        <p>
-         
-        </p>
+
         <form onSubmit={handleLogin}>
           <input
             type="text"
@@ -69,18 +69,46 @@ const Login = () => {
               gap: "10px",
               justifyContent: "flex-end",
               flexDirection: "row",
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "10px",
             }}
           >
             <p style={{ marginBottom: 0 }}>Not Registered?</p>
-            <Link className="regBtn"
-              to={"/register"}
-        
-            >
+            <Link className="regBtn" to="/register">
               Register Now
             </Link>
           </div>
-          <div style={{ justifyContent: "center", alignItems: "center" }}>
+
+          <div
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+              marginBottom: "20px",
+            }}
+          >
             <button type="submit">Login</button>
+          </div>
+
+          {/* Doctor Login Button */}
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
+            <p style={{ marginBottom: "8px" }}>Are you a Doctor?</p>
+            <Link to="/doctorLogin" className="singInDoctorBtn">
+              <button
+                type="button"
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#007bff",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                }}
+              >
+                Login as Doctor
+              </button>
+            </Link>
           </div>
         </form>
       </div>

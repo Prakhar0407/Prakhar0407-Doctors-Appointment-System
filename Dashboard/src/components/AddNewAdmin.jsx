@@ -22,7 +22,11 @@ const AddNewAdmin = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/admin/addadmin",
+<<<<<<< HEAD
+          `http://localhost:4000/api/v1/user/admin/addadmin`,
+=======
+          `https://docapp-server-atoj.onrender.com/api/v1/user/admin/addadmin`,
+>>>>>>> 6025e4bbb85f728086851b9467e902699a712691
           { firstName, lastName, email, phone, dob, gender, password },
           {
             withCredentials: true,

@@ -15,7 +15,11 @@ const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/appointment/getall",
+<<<<<<< HEAD
+          `http://localhost:4000/api/v1/appointment/getall`,
+=======
+          `https://docapp-server-atoj.onrender.com/api/v1/appointment/getall`,
+>>>>>>> 6025e4bbb85f728086851b9467e902699a712691
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -31,7 +35,11 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
+<<<<<<< HEAD
         `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+=======
+        `https://docapp-server-atoj.onrender.com/api/v1/appointment/update/${appointmentId}`,
+>>>>>>> 6025e4bbb85f728086851b9467e902699a712691
         { status },
         { withCredentials: true }
       );

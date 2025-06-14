@@ -75,7 +75,11 @@ const schemaOfAppointment = new mongoose.Schema({
       },
       rate: {
         type: Number,
+<<<<<<< HEAD
         enum: [0, 1, 2, 3, 4, 5],
+=======
+        enum: [0,1, 2, 3, 4, 5],
+>>>>>>> ffdb2e3c12a0977a10eadf580d932fc294f6c8af
         default: 0,
       },
       
