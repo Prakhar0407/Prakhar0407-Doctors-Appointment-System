@@ -16,7 +16,9 @@ import Login from "./pages/Login";
 import News from "./pages/News";
 import AppointmentList from "./pages/AppointmentList.jsx";
 import AddReview from "./pages/AddReview.jsx";
-const VITE_BASE_URL = import.meta.env.VITE_BASE_URL ||"http://localhost:4000";
+import DoctorLogin from "./pages/Docs/DoctorLogin";
+import DoctorDashboard from "./pages/Docs/DoctorDashboard";
+
 const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(Context);
@@ -25,7 +27,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          `https://docapp-om26.onrender.com/api/v1/user/patient/me`,
+          "http://localhost:4000/api/v1/user/patient/me",
           {
             withCredentials: true,
           }
@@ -42,25 +44,27 @@ const App = () => {
 
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/appointment" element={<Appointment />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/appointments" element={<AppointmentList />} />
-          <Route path="/review/:id" element={<AddReview />} />
+     <Router>
+  {/* Conditionally hide Navbar and Footer on doctor dashboard */}
+  {!window.location.pathname.startsWith("/doctor-dashboard") && <Navbar />}
 
-        
-       
-        </Routes>
-        <Footer />
-        <ToastContainer position="top-center" />
-      </Router>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/appointment" element={<Appointment />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/register" element={<Register />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/news" element={<News />} />
+    <Route path="/appointments" element={<AppointmentList />} />
+    <Route path="/review/:id" element={<AddReview />} />
+    <Route path="/doctorLogin" element={<DoctorLogin />} />
+    <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+  </Routes>
+
+  {!window.location.pathname.startsWith("/doctor-dashboard") && <Footer />}
+</Router>
+
     </>
   );
 };

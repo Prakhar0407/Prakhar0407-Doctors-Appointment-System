@@ -17,7 +17,7 @@ const AppointmentList = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          `https://docapp-om26.onrender.com/api/v1/appointment/getall`,
+          `http://localhost:4000/api/v1/appointment/getall`,
           { withCredentials: true }
         );
         const filteredAppointments = data.appointments.filter(
@@ -28,7 +28,7 @@ const AppointmentList = () => {
         setTotalAppointmentCount(count);
       } catch (error) {
         setAppointments([]);
-        toast.error("Sign in to see Appointments!");
+        toast.error("Unable to fetch Appointments!");
       }
     };
     fetchAppointments();
@@ -42,7 +42,7 @@ const AppointmentList = () => {
   const handleUpdaterate = async (appointmentId, rate) => {
     try {
       const { data } = await axios.put(
-        `https://docapp-om26.onrender.com/api/v1/appointment/update/${appointmentId}`,
+        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
         { rate },
         { withCredentials: true }
       );
