@@ -4,7 +4,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Context } from "../main";
-const VITE_BASE_URL = import.meta.env.VITE_BASE_URL ||"http://localhost:4000" ;
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -12,11 +11,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await axios
-<<<<<<< HEAD
-      .get(`http://localhost:4000/api/v1/user/patient/logout`, {
-=======
-.get(`http://localhost:4000/api/v1/user/patient/logout`, {
->>>>>>> 6025e4bbb85f728086851b9467e902699a712691
+      .get("http://localhost:4000/api/v1/user/patient/logout", {
         withCredentials: true,
       })
       .then((res) => {
@@ -54,7 +49,6 @@ const Navbar = () => {
             <Link to={"/news"} onClick={() => setShow(!show)}>
               News
             </Link>
-            
       
           </div>   
                </div>
