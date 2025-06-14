@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 export const databaseworking = () => {
   
     mongoose.connect(process.env.MONGO_URI, {
-      dbName: "Appointment_System_Deploy",  
+      dbName: "DOCTORS-APPOINTMENT-APP",  
       
     })
     .then(() => {

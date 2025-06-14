@@ -21,7 +21,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          `https://docapp-om26.onrender.com/api/v1/user/admin/me`,
+          `http://localhost:4000/api/v1/user/admin/me`,
           {
             withCredentials: true,
           }
@@ -43,7 +43,7 @@ const App = () => {
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/doctor/addadmin" element={<AddNewDoctor />} />
+        <Route path="/doctor/adddoctor" element={<AddNewDoctor />} />
         <Route path="/admin/addadmin" element={<AddNewAdmin />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/doctors" element={<Doctors />} />
