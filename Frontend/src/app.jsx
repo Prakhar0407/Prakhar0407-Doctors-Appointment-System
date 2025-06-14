@@ -23,24 +23,20 @@ const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(Context);
 
-  useEffect(() => {
+   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-<<<<<<< HEAD
-          "http://localhost:4000/api/v1/user/patient/me",
-=======
-          `https://docapp-server-atoj.onrender.com/api/v1/user/patient/me`,
->>>>>>> 6025e4bbb85f728086851b9467e902699a712691
+          "http://localhost:4000/api/v1/user/admin/me",
           {
             withCredentials: true,
           }
         );
         setIsAuthenticated(true);
-        setUser(response.data.user);
+        setAdmin(response.data.user);
       } catch (error) {
         setIsAuthenticated(false);
-        setUser({});
+        setAdmin({});
       }
     };
     fetchUser();
