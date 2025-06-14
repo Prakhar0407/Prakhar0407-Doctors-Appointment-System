@@ -56,11 +56,7 @@ const AddNewDoctor = () => {
       formData.append("doctorDepartment", doctorDepartment);
       formData.append("docAvatar", docAvatar);
       await axios
-<<<<<<< HEAD
-        .post(`http://localhost:4000/api/v1/user/doctor/adddoctor`, formData, {
-=======
-        .post(`https://docapp-server-atoj.onrender.com/api/v1/user/doctor/adddoctor`, formData, {
->>>>>>> 6025e4bbb85f728086851b9467e902699a712691
+        .post("http://localhost:4000/api/v1/user/doctor/addnewdoctor", formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })
