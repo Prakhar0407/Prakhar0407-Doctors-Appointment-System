@@ -24,9 +24,9 @@ const DoctorDashboard = () => {
   return (
     <div style={{ backgroundColor: "#f5f5f5", minHeight: "100vh" }}>
       <DoctorNavbar />
-      <div style={{ padding: "30px" }}>
+      <div style={{ padding: "70px" }}>
         <h2>Doctor Dashboard</h2>
-        <h3 style={{ marginTop: "20px" }}>Your Appointments</h3>
+        <h3 style={{ marginTop: "30px" }}>Your Appointments</h3>
 
         {appointments.length === 0 ? (
           <p>No appointments yet.</p>

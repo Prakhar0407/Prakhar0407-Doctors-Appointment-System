@@ -7,8 +7,8 @@ import { useNavigate, Navigate, Link } from "react-router-dom";
 const DoctorLogin = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const navigateTo = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("rakeshraina@gmail.com");
+  const [password, setPassword] = useState("rakeshraina");
 
   const handleDoctorLogin = async (e) => {
     e.preventDefault();

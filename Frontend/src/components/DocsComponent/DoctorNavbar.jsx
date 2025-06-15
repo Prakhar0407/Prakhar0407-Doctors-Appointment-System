@@ -14,7 +14,7 @@ const DoctorNavbar = () => {
       <h2>Doctor Panel</h2>
       <div>
         <Link to="/doctor-dashboard" style={{ color: "#fff", marginRight: "15px", textDecoration: "none" }}>
-          Dashboard
+          Profile
         </Link>
         <Link to="/login" style={{ color: "#fff", textDecoration: "none" }}>
           Logout
