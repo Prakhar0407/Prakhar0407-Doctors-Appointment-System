@@ -17,10 +17,8 @@ import News from "./pages/News";
 import AppointmentList from "./pages/AppointmentList.jsx";
 import AddReview from "./pages/AddReview.jsx";
 
-
 const App = () => {
-  const { isAuthenticated, setIsAuthenticated, setUser } =
-    useContext(Context);
+  const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -55,12 +53,21 @@ const App = () => {
           <Route path="/news" element={<News />} />
           <Route path="/appointments" element={<AppointmentList />} />
           <Route path="/review/:id" element={<AddReview />} />
-
-        
-       
         </Routes>
         <Footer />
-        <ToastContainer position="top-center" />
+
+        <ToastContainer
+          position="bottom-right"
+          className="custom-toast-container"
+          toastClassName="custom-toast"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick
+          pauseOnHover
+          draggable
+          pauseOnFocusLoss
+        />
       </Router>
     </>
   );

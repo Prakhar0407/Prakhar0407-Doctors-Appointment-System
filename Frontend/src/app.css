@@ -16,6 +16,16 @@ body{
 .titleHead{
     color: aqua;
   }
+  .custom-toast {
+    background-color: gray !important;
+    color: black !important;
+    font-size: 15px !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    font-style: italic;
+    
+  }
+  
 
   /* Navbar */
   nav .logo {
