@@ -26,7 +26,7 @@ router.get("/patient/me", isPatientAuthenticated, getUserDetails);
 router.get("/patient/logout", isPatientAuthenticated, logoutPatient)
 ;
 router.get("/admin/me", isAdminAuthenticated, getUserDetails);
-router.get("/admin/logout", isAdminAuthenticated, logoutAdmin);
+router.get("/admin/logout", logoutAdmin);
 
 router.get("/doctors", getAllDoctors);
 router.post("/doctor/addnewdoctor", isAdminAuthenticated, addNewDoctor);
