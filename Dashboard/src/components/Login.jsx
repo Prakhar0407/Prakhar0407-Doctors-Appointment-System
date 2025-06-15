@@ -5,8 +5,8 @@ import { Context } from "../main";
 import axios from "axios";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("adminadmin@gmail.com");
+  const [password, setPassword] = useState("11111111");
   
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 

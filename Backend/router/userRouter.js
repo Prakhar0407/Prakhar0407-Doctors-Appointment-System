@@ -19,12 +19,12 @@ import {
 const router = express.Router();
 
 router.post("/patient/register", patientRegister);
-router.post("/login", login);
-router.post("/admin/addadmin",isAdminAuthenticated ,addAdmin);
-
 router.get("/patient/me", isPatientAuthenticated, getUserDetails);
-router.get("/patient/logout", isPatientAuthenticated, logoutPatient)
-;
+router.get("/patient/logout", isPatientAuthenticated, logoutPatient);
+
+router.post("/login", login);
+
+router.post("/admin/addadmin",isAdminAuthenticated ,addAdmin);
 router.get("/admin/me", isAdminAuthenticated, getUserDetails);
 router.get("/admin/logout", isAdminAuthenticated, logoutAdmin);
 

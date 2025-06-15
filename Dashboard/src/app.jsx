@@ -21,7 +21,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/patient/me",
+          "http://localhost:4000/api/v1/user/admin/me",
           {
             withCredentials: true,
           }
@@ -49,7 +49,18 @@ const App = () => {
         <Route path="/doctors" element={<Doctors />} />
 
       </Routes>
-      <ToastContainer position="top-center" />
+      <ToastContainer
+          position="bottom-right"
+          className="custom-toast-container"
+          toastClassName="custom-toast"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick
+          pauseOnHover
+          draggable
+          pauseOnFocusLoss
+        />
     </Router>
   );
 };

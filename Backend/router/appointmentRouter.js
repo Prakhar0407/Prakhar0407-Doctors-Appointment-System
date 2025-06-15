@@ -11,7 +11,7 @@ import {
 const router = express.Router();
 
 router.post("/post", isPatientAuthenticated, postAppointment);
-router.get("/getall", isPatientAuthenticated, getAllAppointments);
+router.get("/getall", getAllAppointments);
 
 //id required
 router.put("/update/:id", isAdminAuthenticated, updateAppointmentStatus);
