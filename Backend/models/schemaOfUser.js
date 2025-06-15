@@ -74,5 +74,7 @@ schemaOfUser.pre("save", async function (next) {
       expiresIn: process.env.JWT_EXPIRES,
     });
   };
+
+  
   
 export const User = mongoose.model("User", schemaOfUser);

@@ -13,6 +13,7 @@ import {
 import {
   isAdminAuthenticated,
   isPatientAuthenticated,
+  isDoctorAuthenticated,
 } from "../middlewares/authenticateAndAuthorize.js";
 
 
@@ -29,6 +30,7 @@ router.get("/admin/me", isAdminAuthenticated, getUserDetails);
 router.get("/admin/logout", isAdminAuthenticated, logoutAdmin);
 
 router.get("/doctors", getAllDoctors);
+router.get("/doctor/me", isDoctorAuthenticated, getUserDetails);
 router.post("/doctor/addnewdoctor", isAdminAuthenticated, addNewDoctor);
 
 

@@ -8,7 +8,7 @@ const DoctorDashboard = () => {
 
   const fetchAppointments = async () => {
     try {
-      const { data } = await axios.get("http://localhost:4000/api/v1/doctor/appointments", {
+      const { data } = await axios.get("http://localhost:4000/api/v1/appointment/doctor/appointments", {
         withCredentials: true,
       });
       setAppointments(data.appointments);
