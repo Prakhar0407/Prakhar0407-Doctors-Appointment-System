@@ -30,10 +30,6 @@ router.get("/admin/logout", isAdminAuthenticated, logoutAdmin);
 
 router.get("/doctors", getAllDoctors);
 router.post("/doctor/addnewdoctor", isAdminAuthenticated, addNewDoctor);
-<<<<<<< HEAD
-
-=======
->>>>>>> 84bf9ac (Update changes)
 
 
 export default router;
